@@ -23,9 +23,8 @@
       padding: 0 20px;
     }
     .instagram {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      display: flex;
+      justify-content: center;
     }
   </style>
 </head>
@@ -37,13 +36,21 @@
   </header>
 
   <section>
-    <h2>Últimos posteos</h2>
+    <h2>Último post</h2>
 
     <div class="instagram">
-      <!-- ACA VAN LOS POSTS -->
+
+      <blockquote class="instagram-media"
+        data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/reel/DTeA8ajEYH1/"
+        data-instgrm-version="14">
+      </blockquote>
+
     </div>
   </section>
 
-  <script async src="//www.instagram.com/embed.js"></script>
+  <!-- Script de Instagram (UNO SOLO) -->
+  <script async src="https://www.instagram.com/embed.js"></script>
+
 </body>
 </html>
