@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Landing</title>
+  <title>León Automotores</title>
 
   <style>
     body {
@@ -11,46 +11,113 @@
       margin: 0;
       background: #f5f5f5;
     }
+
     header {
       background: #000;
       color: #fff;
       padding: 40px 20px;
       text-align: center;
     }
+
     section {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 1100px;
+      margin: 40px auto;
       padding: 0 20px;
     }
-    .instagram {
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* FEED */
+    .feed {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .post {
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    .post img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    /* PLACEHOLDER */
+    .placeholder {
+      padding: 40px;
+      color: #888;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
       display: flex;
+      align-items: center;
       justify-content: center;
+      font-size: 32px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    .whatsapp:hover {
+      background: #1ebe5d;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Mi Landing Page</h1>
-    <p>Seguinos en Instagram</p>
+    <h1>León Automotores</h1>
+    <p>Seguinos en nuestras redes</p>
   </header>
 
   <section>
-    <h2>Último post</h2>
+    <h2>Últimas novedades</h2>
 
-    <div class="instagram">
-
-      <blockquote class="instagram-media"
-        data-instgrm-captioned
-        data-instgrm-permalink="https://www.instagram.com/reel/DTeA8ajEYH1/"
-        data-instgrm-version="14">
-      </blockquote>
-
+    <!-- FEED AUTOMÁTICO (PREPARADO) -->
+    <div id="feed" class="feed">
+      <div class="placeholder">
+        El feed de Instagram y Facebook se cargará automáticamente aquí.
+      </div>
     </div>
   </section>
 
-  <!-- Script de Instagram (UNO SOLO) -->
-  <script async src="https://www.instagram.com/embed.js"></script>
+  <!-- WHATSAPP -->
+  <a class="whatsapp"
+     href="https://wa.me/5493584828385?text=Hola!%20Tengo%20una%20consulta%20para%20hacerles..."
+     target="_blank"
+     aria-label="WhatsApp">
+    💬
+  </a>
+
+  <!-- JS DEL FEED (VACÍO POR AHORA) -->
+  <script>
+    /*
+      MAÑANA ACA VAMOS A:
+      - Conectar Meta Graph API
+      - Traer los últimos posteos
+      - Reemplazar el placeholder
+    */
+  </script>
 
 </body>
 </html>
+
