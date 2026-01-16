@@ -44,7 +44,7 @@ section { padding:80px 20px; text-align:center; }
 }
 #quienes-somos .texto { flex:1 1 400px; max-width:600px; text-align:justify; }
 #quienes-somos .texto h2 { margin-bottom:20px; }
-#quienes-somos .texto p { font-style: italic; text-align: justify; line-height: 1.5; }
+#quienes-somos .texto p { font-style: italic; text-align: justify; line-height:1.5; }
 #quienes-somos .foto-gerente {
     flex:0 0 70px;
     border-radius:50%;
@@ -82,17 +82,23 @@ section { padding:80px 20px; text-align:center; }
 
 /* Contacto */
 #contactenos { background-color:#fff; min-height:400px; }
-#contactenos h2 { margin-bottom:60px; } /* más espacio entre título y bloque */
+#contactenos h2 { margin-bottom:60px; }
 #contactenos .contact-info {
-    display:flex; flex-wrap:wrap; justify-content:center; gap:30px; align-items:stretch;
+    display:flex; flex-wrap:wrap; justify-content:center; gap:30px; align-items:flex-start; /* altura basada en el formulario */
 }
-#contactenos .mapa, #contactenos .formulario {
-    flex:1 1 400px; max-width:500px;
+#contactenos .formulario {
+    flex: 1 1 400px;
+    max-width:500px;
     display:flex; flex-direction:column;
 }
-.mapa { position:relative; padding-bottom:56.25%; border-radius:8px; overflow:hidden; }
-.mapa iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
-
+#contactenos .mapa {
+    flex: 1 1 400px;
+    max-width:500px;
+    display:flex; flex-direction:column;
+}
+#contactenos .mapa iframe {
+    height: 100%; /* ajusta a la altura del contenedor (.mapa) */
+}
 #contactenos input, #contactenos select, #contactenos textarea {
     width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px; font-family:'Alibaba Sans', sans-serif;
 }
@@ -114,8 +120,9 @@ footer a:hover { text-decoration:underline; }
 .backtotop-float { background-color:#333; right:90px; }
 .whatsapp-float:hover, .backtotop-float:hover { transform:scale(1.1); }
 
+/* Responsive */
 @media(max-width:768px){
-    #quienes-somos { flex-direction:column; gap:10px; } /* espacio reducido entre texto y foto */
+    #quienes-somos { flex-direction:column; gap:5px; }
     #contactenos .contact-info { flex-direction:column; }
     .hero img { max-width:360px; margin-bottom:20px; }
     .hero .buttons { gap:10px; }
@@ -179,14 +186,6 @@ footer a:hover { text-decoration:underline; }
 <section id="contactenos">
     <h2>CONTACTANOS</h2>
     <div class="contact-info">
-        <div class="mapa">
-            <iframe 
-                src="https://www.google.com/maps?q=Buenos+Aires+1166,+Rio+Cuarto,+Córdoba,+Argentina+X5800&output=embed" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-            <p style="margin-top:5px; font-size:0.9rem;"><a href="https://goo.gl/maps/5o5D7Nf3XeB2" target="_blank">Abrir en Google Maps</a></p>
-        </div>
         <div class="formulario">
             <form action="mailto:Consultas.leonautomotores@gmail.com" method="post" enctype="text/plain">
                 <input type="text" name="nombre" placeholder="Nombre" required>
@@ -203,6 +202,13 @@ footer a:hover { text-decoration:underline; }
                 <textarea name="comentarios" placeholder="Comentarios" rows="5"></textarea>
                 <button type="submit">Enviar</button>
             </form>
+        </div>
+        <div class="mapa">
+            <iframe 
+                src="https://www.google.com/maps?q=Buenos+Aires+1166,+Rio+Cuarto,+Córdoba,+Argentina+X5800&output=embed" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
         </div>
     </div>
 </section>
@@ -229,7 +235,7 @@ window.addEventListener('load', () => { window.scrollTo(0,0); });
 // Carrusel infinito con flechas y touch
 const carousel = document.querySelector('.instagram-grid');
 const posts = Array.from(carousel.children);
-posts.forEach(post => carousel.appendChild(post.cloneNode(true))); // duplicar para loop
+posts.forEach(post => carousel.appendChild(post.cloneNode(true)));
 const postWidth = posts[0].offsetWidth + 15;
 let index = 0;
 
