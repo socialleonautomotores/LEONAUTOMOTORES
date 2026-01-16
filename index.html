@@ -1,191 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leon Automotores</title>
-<link rel="icon" href="favicon.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Alibaba+Sans&display=swap" rel="stylesheet">
-<style>
-  body {
-    margin: 0;
-    font-family: 'Alibaba Sans', sans-serif;
-    scroll-behavior: smooth;
-    background-color: #fff;
-    color: #222;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leon Automotores</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #fff;
+      color: #222;
+    }
 
-  a { text-decoration: none; color: inherit; }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
 
-  header {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
+    header img {
+      height: 50px;
+    }
 
-  header img { height: 50px; }
+    nav a {
+      text-decoration: none;
+      color: #222;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
 
-  nav a {
-    margin-left: 20px;
-    font-weight: bold;
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 2px solid #C19C00;
-    transition: all 0.3s;
-  }
+    nav a:hover {
+      color: #3897f0;
+    }
 
-  nav a:hover {
-    background-color: #C19C00;
-    color: #fff;
-  }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-  section {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 20px;
+      background: url('hero-bg.jpg') center/cover no-repeat;
+      color: #fff;
+    }
 
-  h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 30px;
-    color: #C19C00;
-  }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
 
-  .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 100px 20px;
-    color: #fff;
-    background: url('hero-bg.jpg') center/cover no-repeat;
-  }
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+    }
 
-  .hero h1 { font-size: 3em; margin-bottom: 20px; }
-  .hero p { font-size: 1.2em; max-width: 600px; }
+    .button-outline {
+      border: 2px solid #3897f0;
+      background: transparent;
+      color: #3897f0;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
 
-  .button-outline {
-    border: 2px solid #C19C00;
-    background: transparent;
-    color: #C19C00;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: inline-block;
-    margin-top: 20px;
-  }
+    .button-outline:hover {
+      background: #3897f0;
+      color: #fff;
+    }
 
-  .button-outline:hover {
-    background: #C19C00;
-    color: #fff;
-  }
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
 
-  /* Quienes Somos */
-  .quienes-somos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-  }
+    .instagram-post {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
 
-  .quienes-somos .texto { flex: 1 1 400px; text-align: justify; }
-  .quienes-somos img { flex: 0 0 250px; max-width: 100%; border-radius: 12px; }
+    .instagram-post:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
 
-  /* Novedades */
-  .posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
+    .quienes-somos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
 
-  .instagram-post {
-    overflow: hidden;
-    border-radius: 12px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
-    cursor: pointer;
-  }
+    .quienes-somos .texto {
+      flex: 1 1 400px;
+    }
 
-  .instagram-post:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-    filter: brightness(1.05);
-  }
+    .quienes-somos img {
+      flex: 0 0 250px;
+      max-width: 100%;
+      border-radius: 12px;
+    }
 
-  /* Contacto */
-  .contacto { display: flex; flex-wrap: wrap; gap: 20px; }
-  .contacto .info { flex: 1 1 300px; text-align: center; }
-  .contacto .mapa { flex: 1 1 400px; }
+    .contacto {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-  iframe { width: 100%; height: 300px; border: 0; border-radius: 12px; }
+    .contacto .info {
+      flex: 1 1 300px;
+    }
 
-  /* Botón flotante WhatsApp */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: transform 0.3s;
-  }
+    .contacto .mapa {
+      flex: 1 1 400px;
+    }
 
-  .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: transform 0.3s;
+    }
 
-  /* Botón subir al top */
-  .top-button {
-    position: fixed;
-    bottom: 100px;
-    right: 20px;
-    background: #C19C00;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-    cursor: pointer;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-  }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
 
-  .top-button:hover { transform: scale(1.1); }
+    @media(max-width: 768px){
+      .quienes-somos {
+        flex-direction: column;
+      }
 
-  @media(max-width:768px){
-    .quienes-somos { flex-direction: column; }
-    .contacto { flex-direction: column; }
-  }
-</style>
+      .contacto {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <img src="leon-logo.png" alt="Leon Automotores Logo">
+  <img src="Leon Logo.png" alt="Leon Automotores">
   <nav>
     <a href="#quienes-somos">Quienes Somos</a>
-    <a href="#posts">Novedades</a>
+    <a href="#posts">Posts</a>
     <a href="#contacto">Contacto</a>
   </nav>
 </header>
@@ -209,21 +199,27 @@
 <section id="posts">
   <h2>Últimos Posts</h2>
   <div class="posts">
+    <!-- Post 1 -->
     <div class="instagram-post">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTeA8ajEYH1/" data-instgrm-version="14"></blockquote>
     </div>
+    <!-- Post 2 -->
     <div class="instagram-post">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTLK8KwkQ1c/" data-instgrm-version="14"></blockquote>
     </div>
+    <!-- Post 3 -->
     <div class="instagram-post">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTNhGNTkYyf/" data-instgrm-version="14"></blockquote>
     </div>
+    <!-- Post 4 -->
     <div class="instagram-post">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTIiIP4Efxy/" data-instgrm-version="14"></blockquote>
     </div>
+    <!-- Post 5 -->
     <div class="instagram-post">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTXYZ/" data-instgrm-version="14"></blockquote>
     </div>
+    <!-- Post 6 -->
     <div class="instagram-post">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTABC/" data-instgrm-version="14"></blockquote>
     </div>
@@ -239,31 +235,20 @@
       <p><strong>Email:</strong> <a href="mailto:Consultas.leonautomotores@gmail.com">Consultas.leonautomotores@gmail.com</a></p>
     </div>
     <div class="mapa">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.733409988163!2d-64.39897168479887!3d-33.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xabcdef1234567890!2sBuenos%20Aires%201166%2C%20Rio%20Cuarto%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1600000000000!5m2!1ses!2sar" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.733409988163!2d-64.39897168479887!3d-33.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xabcdef1234567890!2sBuenos%20Aires%201166%2C%20Rio%20Cuarto%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1600000000000!5m2!1ses!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
 </section>
 
 <a href="https://wa.me/5493584828385?text=Hola!%20Tengo%20una%20consulta%20para%20hacerles..." class="whatsapp-float" target="_blank">💬</a>
 
-<button class="top-button" id="topBtn">↑</button>
-
 <script async src="//www.instagram.com/embed.js"></script>
 
 <script>
   // Scroll al top al refrescar la página
-  window.addEventListener('load', () => { window.scrollTo(0, 0); });
-
-  // Botón subir al top
-  const topButton = document.getElementById("topBtn");
-  window.onscroll = function() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      topButton.style.display = "flex";
-    } else {
-      topButton.style.display = "none";
-    }
-  };
-  topButton.addEventListener("click", () => { window.scrollTo({top:0, behavior:"smooth"}); });
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+  });
 </script>
 
 </body>
