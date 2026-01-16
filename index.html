@@ -24,6 +24,7 @@
 
     body, html {
         height: 100%;
+        scroll-behavior: auto; /* scroll instantáneo a secciones */
     }
 
     /* Hero */
@@ -46,7 +47,7 @@
         margin-bottom: 40px;
     }
 
-    /* Botones estilo dorado outline */
+    /* Botones dorado premium con degradado y sombra */
     .hero .buttons {
         display: flex;
         gap: 20px;
@@ -57,18 +58,18 @@
     .hero .buttons a {
         text-decoration: none;
         padding: 12px 25px;
-        border: 2px solid #D4AF37; /* dorado del manual */
-        color: #D4AF37;
-        background-color: transparent;
+        background: linear-gradient(45deg, #D4AF37, #B7952D); /* degradado dorado */
+        color: #1c1c1c;
         font-weight: 700;
-        border-radius: 8px;
-        transition: all 0.3s;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     }
 
     .hero .buttons a:hover {
-        background-color: #D4AF37;
-        color: #1c1c1c;
-        transform: translateY(-2px);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        background: linear-gradient(45deg, #B7952D, #D4AF37); /* hover invertido */
     }
 
     /* Secciones */
@@ -77,7 +78,7 @@
         text-align: center;
     }
 
-    #quienes-somos, #donde-estamos, #contactenos, #flota {
+    #quienes-somos, #novedades, #flota, #contactenos {
         min-height: 400px;
         background-color: #f9f9f9;
         color: #1c1c1c;
@@ -160,9 +161,9 @@
     <img src="leon-logo.png" alt="Leon Automotores">
     <div class="buttons">
         <a href="#quienes-somos">QUIENES SOMOS</a>
-        <a href="#donde-estamos">DONDE ESTAMOS</a>
-        <a href="#contactenos">CONTACTENOS</a>
-        <a href="#flota">FLOTA</a>
+        <a href="#novedades">NOVEDADES</a>
+        <a href="#flota">NUESTRA FLOTA</a>
+        <a href="#contactenos">CONTACTANOS</a>
     </div>
 </section>
 
@@ -172,22 +173,6 @@
     <p>Aquí va el contenido institucional sobre la empresa.</p>
 </section>
 
-<section id="donde-estamos">
-    <h2>DONDE ESTAMOS</h2>
-    <p>Mapa o dirección de la agencia.</p>
-</section>
-
-<section id="contactenos">
-    <h2>CONTACTENOS</h2>
-    <p>Formulario de contacto o botón de WhatsApp.</p>
-</section>
-
-<section id="flota">
-    <h2>FLOTA</h2>
-    <p>Galería de vehículos disponibles.</p>
-</section>
-
-<!-- Sección Novedades / Instagram -->
 <section id="novedades">
     <h2>Novedades</h2>
     <p>Mirá nuestras últimas publicaciones en Instagram.</p>
@@ -200,6 +185,16 @@
         <div class="insta-post"><img src="post5.jpg" alt="Post 5"></div>
         <div class="insta-post"><img src="post6.jpg" alt="Post 6"></div>
     </div>
+</section>
+
+<section id="flota">
+    <h2>NUESTRA FLOTA</h2>
+    <p>Galería de vehículos disponibles.</p>
+</section>
+
+<section id="contactenos">
+    <h2>CONTACTANOS</h2>
+    <p>Formulario de contacto o botón de WhatsApp.</p>
 </section>
 
 </body>
