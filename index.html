@@ -1,163 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>LEÓN Automotores</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <style>
-    :root {
-      --negro: #0f0f0f;
-      --negro-sec: #181818;
-      --dorado: #c9a23f;
-      --blanco: #ffffff;
-      --gris: #bfbfbf;
-    }
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leon Automotores</title>
+<style>
+    /* Reset básico */
     * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--negro);
-      color: var(--blanco);
+    body, html {
+        height: 100%;
+        font-family: Arial, sans-serif;
     }
 
-    /* HERO */
-    header {
-      background: linear-gradient(
-        180deg,
-        #000 0%,
-        var(--negro-sec) 100%
-      );
-      padding: 90px 20px;
-      text-align: center;
+    /* Hero */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh; /* ocupa toda la pantalla */
+        background: linear-gradient(135deg, #1c1c1c, #333333); /* degradado oscuro */
+        color: white;
     }
 
-    header img {
-      max-width: 320px; /* más protagonista */
-      width: 100%;
-      height: auto;
+    .hero img {
+        max-width: 250px; /* ajusta según el tamaño de tu logo */
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
     }
 
-    section {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+        color: white;
+        margin-bottom: 30px;
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 1.8rem;
-      color: var(--blanco);
+    /* Botones */
+    .hero .buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    /* FEED */
-    .feed {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+    .hero .buttons a {
+        text-decoration: none;
+        padding: 12px 25px;
+        background-color: #ffcc00; /* amarillo de contraste */
+        color: #1c1c1c;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background-color 0.3s, transform 0.2s;
     }
 
-    .post {
-      background: var(--negro-sec);
-      border-radius: 10px;
-      padding: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-      text-align: center;
+    .hero .buttons a:hover {
+        background-color: #e6b800;
+        transform: translateY(-2px);
     }
 
-    .post img {
-      width: 100%;
-      border-radius: 8px;
-    }
+    /* Responsive */
+    @media (max-width: 600px) {
+        .hero h1 {
+            font-size: 1.8rem;
+        }
 
-    /* PLACEHOLDER */
-    .placeholder {
-      grid-column: 1 / -1;
-      padding: 50px;
-      text-align: center;
-      font-style: italic;
-      color: var(--gris);
-      border: 1px dashed #333;
-      border-radius: 10px;
-    }
+        .hero img {
+            max-width: 180px;
+        }
 
-    /* WHATSAPP */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: #fff;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      z-index: 1000;
-    }
+        .hero .buttons {
+            gap: 10px;
+        }
 
-    .whatsapp:hover {
-      background: #1ebe5d;
+        .hero .buttons a {
+            padding: 10px 18px;
+            font-size: 0.9rem;
+        }
     }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 70px 20px;
-      }
-
-      header img {
-        max-width: 260px;
-      }
-    }
-  </style>
+</style>
 </head>
-
 <body>
 
-  <header>
-    <!-- ISOLOGOTIPO -->
-   <img src="leon-logo.png" alt="León Automotores">
-  </header>
+<section class="hero">
+    <img src="LeonLogo.png" alt="Leon Automotores">
+    <h1>SOMOS DE PALABRA</h1>
 
-  <section>
-    <h2>Últimas novedades</h2>
-
-    <div id="feed" class="feed">
-      <div class="placeholder">
-        El feed de Instagram y Facebook se cargará automáticamente aquí.
-      </div>
+    <div class="buttons">
+        <a href="#quienes-somos">QUIENES SOMOS</a>
+        <a href="#donde-estamos">DONDE ESTAMOS</a>
+        <a href="#contactenos">CONTACTENOS</a>
+        <a href="#flota">FLOTA</a>
     </div>
-  </section>
-
-  <!-- WHATSAPP -->
-  <a class="whatsapp"
-     href="https://wa.me/5493584828385?text=Hola!%20Tengo%20una%20consulta%20para%20hacerles..."
-     target="_blank"
-     aria-label="WhatsApp">
-    💬
-  </a>
-
-  <!-- JS FUTURO -->
-  <script>
-    /*
-      Próximo paso:
-      - Conectar Meta Graph API
-      - Traer últimos posteos
-      - Reemplazar el placeholder
-    */
-  </script>
+</section>
 
 </body>
 </html>
