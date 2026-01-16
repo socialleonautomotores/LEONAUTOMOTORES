@@ -35,26 +35,14 @@
         #000 0%,
         var(--negro-sec) 100%
       );
-      padding: 80px 20px;
+      padding: 90px 20px;
       text-align: center;
     }
 
     header img {
-      max-width: 220px;
-      margin-bottom: 30px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.4rem;
-      color: var(--dorado);
-      font-weight: 400;
-      letter-spacing: 1px;
+      max-width: 320px; /* más protagonista */
+      width: 100%;
+      height: auto;
     }
 
     section {
@@ -125,12 +113,12 @@
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
+      header {
+        padding: 70px 20px;
       }
 
-      header p {
-        font-size: 1.2rem;
+      header img {
+        max-width: 260px;
       }
     }
   </style>
@@ -139,11 +127,8 @@
 <body>
 
   <header>
-    <!-- LOGO -->
-    <img src="Leon Logo.png" alt="León Automotores">
-
-    <h1>LEÓN AUTOMOTORES</h1>
-    <p>SOMOS DE PALABRA</p>
+    <!-- ISOLOGOTIPO -->
+    <img src="leon-logo.png" alt="León Automotores">
   </header>
 
   <section>
