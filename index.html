@@ -15,27 +15,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
-/* Reset básico */
 * { margin:0; padding:0; box-sizing:border-box; }
 body, html, h1, h2, h3, h4, h5, h6, p, a, div { font-family: 'Alibaba Sans', Arial, sans-serif; color:#1c1c1c; }
 body, html { height:100%; scroll-behavior: smooth; }
 
 /* Hero */
 .hero {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    height:100vh;
-    background:linear-gradient(135deg, #1c1c1c, #333333);
-    color:white;
-    padding:0 20px;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; height:100vh; background:linear-gradient(135deg, #1c1c1c, #333333);
+    color:white; padding:0 20px;
 }
 .hero img { max-width:500px; width:100%; height:auto; margin-bottom:40px; }
-.hero .buttons {
-    display:flex; gap:20px; flex-wrap:wrap; justify-content:center;
-}
+.hero .buttons { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
 .hero .buttons a {
     text-decoration:none; padding:12px 25px; border:2px solid #D4AF37;
     color:#D4AF37; background-color:transparent; font-weight:700; border-radius:8px;
@@ -52,7 +43,13 @@ section { padding:80px 20px; text-align:center; }
     background-color:#f9f9f9;
 }
 #quienes-somos .texto { flex:1 1 400px; max-width:600px; text-align:justify; }
-#quienes-somos .foto-gerente { flex:0 0 100px; border-radius:50%; }
+#quienes-somos .foto-gerente {
+    flex:0 0 70px; /* tamaño más pequeño */
+    border-radius:50%;
+    border:3px solid #D4AF37; /* borde dorado */
+    box-shadow:0 5px 15px rgba(0,0,0,0.3); /* sombra */
+    object-fit:cover;
+}
 
 /* Novedades / Carrusel */
 #novedades { background-color:#fff; }
@@ -83,6 +80,7 @@ section { padding:80px 20px; text-align:center; }
 
 /* Contacto */
 #contactenos { background-color:#fff; min-height:400px; }
+#contactenos h2 { margin-bottom:40px; } /* más espacio entre título y contenido */
 #contactenos .contact-info { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; align-items:stretch; }
 #contactenos .mapa, #contactenos .formulario { flex:1 1 400px; max-width:500px; }
 #contactenos iframe { width:100%; height:100%; border:0; border-radius:8px; }
@@ -178,7 +176,6 @@ footer a:hover { text-decoration:underline; }
                 allowfullscreen="" 
                 loading="lazy">
             </iframe>
-            <p style="margin-top:10px;">Buenos Aires 1166 – Rio Cuarto – Córdoba – Argentina</p>
         </div>
         <div class="formulario">
             <form action="mailto:Consultas.leonautomotores@gmail.com" method="post" enctype="text/plain">
@@ -215,19 +212,20 @@ footer a:hover { text-decoration:underline; }
 // Scroll al top al refrescar
 window.addEventListener('load', () => { window.scrollTo(0,0); });
 
-// Carrusel infinito
+// Carrusel infinito 1 post cada 3 segundos
 const carousel = document.querySelector('.instagram-grid');
 const posts = Array.from(carousel.children);
-posts.forEach(post => carousel.appendChild(post.cloneNode(true))); // clonar para loop
+posts.forEach(post => carousel.appendChild(post.cloneNode(true))); // duplicar para loop
 
-let scrollPos = 0;
-function scrollCarousel() {
-    scrollPos += 1; // velocidad
-    if(scrollPos >= carousel.scrollWidth/2) scrollPos = 0;
-    carousel.scrollLeft = scrollPos;
-    requestAnimationFrame(scrollCarousel);
+let index = 0;
+const postWidth = posts[0].offsetWidth + 15; // ancho + gap
+
+function moveCarousel() {
+    index++;
+    if(index >= posts.length) index = 0;
+    carousel.scrollTo({ left: index * postWidth, behavior: 'smooth' });
 }
-scrollCarousel();
+setInterval(moveCarousel, 3000);
 </script>
 
 </body>
