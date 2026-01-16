@@ -33,29 +33,20 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        height: 100vh; /* ocupa toda la pantalla */
-        background: linear-gradient(135deg, #1c1c1c, #333333); /* fondo premium oscuro */
+        height: 100vh;
+        background: linear-gradient(135deg, #1c1c1c, #333333);
         color: white;
         padding: 0 20px;
     }
 
     .hero img {
-        max-width: 500px; /* logo ahora doble tamaño */
+        max-width: 500px; /* logo doble tamaño */
         width: 100%;
         height: auto;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
-    /* Subtítulo / slogan */
-    .hero .subtitle {
-        font-size: 1.5rem; /* tamaño más pequeño que el logo */
-        font-weight: 500; /* regular/medium */
-        letter-spacing: 1px;
-        margin-bottom: 40px; /* aire premium */
-        color: white;
-    }
-
-    /* Botones */
+    /* Botones estilo dorado outline */
     .hero .buttons {
         display: flex;
         gap: 20px;
@@ -66,39 +57,21 @@
     .hero .buttons a {
         text-decoration: none;
         padding: 12px 25px;
-        background-color: #ffcc00; /* amarillo de contraste */
-        color: #1c1c1c;
-        font-weight: 700; /* bold */
+        border: 2px solid #D4AF37; /* dorado del manual */
+        color: #D4AF37;
+        background-color: transparent;
+        font-weight: 700;
         border-radius: 8px;
-        transition: background-color 0.3s, transform 0.2s;
+        transition: all 0.3s;
     }
 
     .hero .buttons a:hover {
-        background-color: #e6b800;
+        background-color: #D4AF37;
+        color: #1c1c1c;
         transform: translateY(-2px);
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-        .hero .subtitle {
-            font-size: 1.2rem;
-        }
-
-        .hero img {
-            max-width: 360px; /* tamaño proporcional en móviles */
-        }
-
-        .hero .buttons {
-            gap: 10px;
-        }
-
-        .hero .buttons a {
-            padding: 10px 18px;
-            font-size: 0.9rem;
-        }
-    }
-
-    /* Otras secciones básicas de la landing (placeholder) */
+    /* Secciones */
     section {
         padding: 80px 20px;
         text-align: center;
@@ -109,19 +82,82 @@
         background-color: #f9f9f9;
         color: #1c1c1c;
     }
+
+    /* Novedades / Instagram */
+    #novedades {
+        background-color: #fff;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    #novedades h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #1c1c1c;
+    }
+
+    #novedades p {
+        font-size: 1rem;
+        margin-bottom: 40px;
+        color: #555;
+    }
+
+    .instagram-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        justify-items: center;
+    }
+
+    .insta-post {
+        width: 100%;
+        max-width: 200px;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #f0f0f0;
+    }
+
+    .insta-post img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        .hero img {
+            max-width: 360px;
+        }
+
+        .hero .buttons {
+            gap: 10px;
+        }
+
+        .hero .buttons a {
+            padding: 10px 18px;
+            font-size: 0.9rem;
+        }
+
+        #novedades h2 {
+            font-size: 1.5rem;
+        }
+
+        #novedades p {
+            font-size: 0.9rem;
+        }
+
+        .insta-post {
+            max-width: 140px;
+        }
+    }
 </style>
 </head>
 <body>
 
 <!-- Hero principal -->
 <section class="hero">
-    <!-- Logo oficial -->
     <img src="leon-logo.png" alt="Leon Automotores">
-
-    <!-- Subtítulo / slogan -->
-    <div class="subtitle">SOMOS DE PALABRA</div>
-
-    <!-- Botones -->
     <div class="buttons">
         <a href="#quienes-somos">QUIENES SOMOS</a>
         <a href="#donde-estamos">DONDE ESTAMOS</a>
@@ -136,4 +172,35 @@
     <p>Aquí va el contenido institucional sobre la empresa.</p>
 </section>
 
-<section id="donde-estam
+<section id="donde-estamos">
+    <h2>DONDE ESTAMOS</h2>
+    <p>Mapa o dirección de la agencia.</p>
+</section>
+
+<section id="contactenos">
+    <h2>CONTACTENOS</h2>
+    <p>Formulario de contacto o botón de WhatsApp.</p>
+</section>
+
+<section id="flota">
+    <h2>FLOTA</h2>
+    <p>Galería de vehículos disponibles.</p>
+</section>
+
+<!-- Sección Novedades / Instagram -->
+<section id="novedades">
+    <h2>Novedades</h2>
+    <p>Mirá nuestras últimas publicaciones en Instagram.</p>
+
+    <div class="instagram-grid">
+        <div class="insta-post"><img src="post1.jpg" alt="Post 1"></div>
+        <div class="insta-post"><img src="post2.jpg" alt="Post 2"></div>
+        <div class="insta-post"><img src="post3.jpg" alt="Post 3"></div>
+        <div class="insta-post"><img src="post4.jpg" alt="Post 4"></div>
+        <div class="insta-post"><img src="post5.jpg" alt="Post 5"></div>
+        <div class="insta-post"><img src="post6.jpg" alt="Post 6"></div>
+    </div>
+</section>
+
+</body>
+</html>
