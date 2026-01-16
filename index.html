@@ -68,7 +68,11 @@ section { padding:80px 20px; text-align:center; }
     background-color:#f9f9f9;
 }
 #quienes-somos .texto { flex:1 1 400px; max-width:600px; text-align:justify; }
-#quienes-somos .foto-gerente { flex:0 0 250px; max-width:100%; border-radius:12px; }
+#quienes-somos .foto-gerente { 
+    flex:0 0 250px; 
+    max-width:100%; 
+    border-radius:50%; /* Foto redonda */
+}
 
 /* Novedades / Carrusel */
 #novedades { background-color:#fff; }
@@ -138,7 +142,7 @@ footer {
     font-size:0.9rem;
     text-align:center;
 }
-footer a { color:#D4AF37; text-decoration:none; }
+footer a { color:white; text-decoration:none; }
 footer a:hover { text-decoration:underline; }
 
 /* Botones flotantes */
@@ -173,7 +177,7 @@ footer a:hover { text-decoration:underline; }
 }
 </style>
 </head>
-<body>
+<body id="top">
 
 <!-- Hero -->
 <section class="hero">
@@ -220,7 +224,8 @@ footer a:hover { text-decoration:underline; }
     <h2>CONTACTANOS</h2>
     <div class="contact-info">
         <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.733409988163!2d-64.39897168479887!3d-33.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xabcdef1234567890!2sBuenos%20Aires%201166%2C%20Rio%20Cuarto%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1600000000000!5m2!1ses!2sar" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"></iframe>
+            <p style="margin-top:10px;">Buenos Aires 1166 – Rio Cuarto – Córdoba – Argentina</p>
         </div>
         <div class="formulario">
             <form action="mailto:Consultas.leonautomotores@gmail.com" method="post" enctype="text/plain">
