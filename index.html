@@ -43,6 +43,7 @@ section { padding:80px 20px; text-align:center; }
     background-color:#f9f9f9;
 }
 #quienes-somos .texto { flex:1 1 400px; max-width:600px; text-align:justify; }
+#quienes-somos .texto h2 { margin-bottom:20px; }
 #quienes-somos .texto p { font-style: italic; text-align: justify; line-height: 1.5; }
 #quienes-somos .foto-gerente {
     flex:0 0 70px;
@@ -114,7 +115,7 @@ footer a:hover { text-decoration:underline; }
 .whatsapp-float:hover, .backtotop-float:hover { transform:scale(1.1); }
 
 @media(max-width:768px){
-    #quienes-somos { flex-direction:column; gap:15px; }
+    #quienes-somos { flex-direction:column; gap:10px; } /* espacio reducido entre texto y foto */
     #contactenos .contact-info { flex-direction:column; }
     .hero img { max-width:360px; margin-bottom:20px; }
     .hero .buttons { gap:10px; }
