@@ -84,32 +84,18 @@
         background-color: #111;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.6s ease, padding 0.3s ease;
+        transition: max-height 0.5s ease, padding 0.3s ease;
         box-sizing: border-box;
+        cursor: pointer; /* click en fondo para cerrar */
     }
 
     .accordion-content p, .accordion-content ul {
         margin: 15px 0;
         color: #fff;
+        cursor: default; /* evitar cerrar al click en texto */
     }
 
     ul { margin-left: 20px; }
-
-    /* "Contraer" al final de cada acordeón */
-    .contraer {
-        text-align: right;
-        font-size: 14px;
-        color: #D4AF37;
-        cursor: pointer;
-        margin-top: 10px;
-        text-decoration: underline;
-        transition: text-shadow 0.4s, color 0.4s;
-    }
-
-    .contraer:hover {
-        color: #fff;
-        text-shadow: 0 0 12px #D4AF37, 0 0 20px #D4AF37;
-    }
 
     /* Botón Cerrar */
     .close-btn {
@@ -123,7 +109,7 @@
         border: 2px solid #D4AF37;
         border-radius: 8px;
         cursor: pointer;
-        transition: all 0.3s ease, box-shadow 0.4s;
+        transition: all 0.3s ease;
         text-align: center;
         text-transform: uppercase;
     }
@@ -131,14 +117,12 @@
     .close-btn:hover {
         background-color: #D4AF37;
         color: #000;
-        box-shadow: 0 0 15px rgba(212,175,55,0.8), 0 0 25px rgba(212,175,55,0.5);
-        transform: translateY(-2px);
+        box-shadow: none;
     }
 
     @media (max-width: 600px) {
         .accordion button { font-size: 16px; }
         .close-btn { padding: 10px 30px; font-size: 16px; }
-        .contraer { font-size: 12px; }
     }
 </style>
 </head>
@@ -156,9 +140,6 @@
             En cumplimiento de la <strong>Ley 25.326 de Protección de Datos Personales</strong>, nosotros, <strong>LEONMA AUTOMOTORES S.A.S.</strong> con domicilio en Calle Gaudard Carlos 1461, piso 1, departamento B, Río Cuarto, Córdoba, CP X5800, República Argentina, y CUIT 30-71849867-4, somos responsables del tratamiento de los datos personales que usted nos proporcione a través de este sitio web <strong>www.leonautomotores.com.ar</strong>.</p>
 
             <!-- resto del contenido -->
-
-            <!-- Contraer -->
-            <div class="contraer">Contraer</div>
         </div>
     </div>
 
@@ -170,24 +151,20 @@
             El acceso y uso de este sitio web <strong>www.leonautomotores.com.ar</strong> (en adelante, el “Sitio”) se rige por estos Términos y Condiciones. El uso del Sitio implica la aceptación de ellos.</p>
 
             <!-- resto del contenido -->
-
-            <!-- Contraer -->
-            <div class="contraer">Contraer</div>
         </div>
     </div>
 
-    <!-- Botón Cerrar Inteligente -->
+    <!-- Botón Cerrar -->
     <button class="close-btn" onclick="cerrarVentana()">Cerrar</button>
 </div>
 
 <script>
-    // Acordeón
     const accordions = document.querySelectorAll(".accordion button");
 
     accordions.forEach(button => {
         button.addEventListener("click", () => {
             const content = button.nextElementSibling;
-            const isOpen = content.style.maxHeight;
+            const isOpen = button.classList.contains("active");
 
             // Cerrar otros acordeones
             document.querySelectorAll(".accordion-content").forEach(c => {
@@ -205,30 +182,29 @@
                 content.style.paddingBottom = "0";
                 button.classList.remove("active");
             } else {
-                content.style.maxHeight = "2000px";
+                content.style.maxHeight = content.scrollHeight + "px";
                 content.style.paddingTop = "15px";
                 content.style.paddingBottom = "15px";
-                content.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 button.classList.add("active");
             }
         });
     });
 
-    // Contraer al final
-    const contraerBtns = document.querySelectorAll(".contraer");
-    contraerBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const content = btn.parentElement;
-            const button = content.previousElementSibling;
-
-            content.style.maxHeight = null;
-            content.style.paddingTop = "0";
-            content.style.paddingBottom = "0";
-            button.classList.remove("active");
+    // Click en fondo del acordeón para cerrar
+    const contents = document.querySelectorAll(".accordion-content");
+    contents.forEach(content => {
+        content.addEventListener("click", (e) => {
+            if (e.target === content) { // solo fondo
+                const button = content.previousElementSibling;
+                content.style.maxHeight = null;
+                content.style.paddingTop = "0";
+                content.style.paddingBottom = "0";
+                button.classList.remove("active");
+            }
         });
     });
 
-    // Botón cerrar
+    // Cerrar ventana
     function cerrarVentana() {
         if (window.opener || window.open('', '_self')) {
             window.close();
