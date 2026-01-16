@@ -1,255 +1,247 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leon Automotores</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>León Automotores</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Alibaba+Sans&display=swap" rel="stylesheet">
+<style>
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Alibaba Sans', sans-serif; }
+
     body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      scroll-behavior: smooth;
-      background-color: #fff;
-      color: #222;
+        scroll-behavior: smooth;
+        line-height: 1.6;
+        background-color: #fff;
+        color: #222;
     }
 
+    a { text-decoration: none; color: inherit; }
+
     header {
-      position: sticky;
-      top: 0;
-      background-color: #fff;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
     }
 
     header img {
-      height: 50px;
+        height: 60px;
+    }
+
+    nav {
+        display: flex;
+        gap: 20px;
     }
 
     nav a {
-      text-decoration: none;
-      color: #222;
-      margin-left: 20px;
-      font-weight: bold;
-      transition: color 0.3s;
+        padding: 8px 18px;
+        border: 2px solid #C19C00; /* dorado manual de marca */
+        border-radius: 25px;
+        font-weight: 600;
+        transition: 0.3s;
     }
 
     nav a:hover {
-      color: #3897f0;
+        background: #C19C00;
+        color: #fff;
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+        padding: 120px 20px 60px;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 100px 20px;
-      background: url('hero-bg.jpg') center/cover no-repeat;
-      color: #fff;
+    h2 {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 30px;
+        color: #C19C00;
     }
 
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
+    /* Sección Quiénes Somos: texto + foto */
+    .quienes-somos-container {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .hero p {
-      font-size: 1.2em;
-      max-width: 600px;
+    .quienes-somos-text {
+        max-width: 600px;
+        text-align: justify;
     }
 
-    .button-outline {
-      border: 2px solid #3897f0;
-      background: transparent;
-      color: #3897f0;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
+    .quienes-somos-foto {
+        width: 250px;
+        height: 250px;
+        background-color: #ddd;
+        border-radius: 12px;
+        flex-shrink: 0;
     }
 
-    .button-outline:hover {
-      background: #3897f0;
-      color: #fff;
-    }
-
+    /* Novedades - Posts Instagram */
     .posts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
     }
 
-    .instagram-post {
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
+    .post-ig {
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s;
+        cursor: pointer;
     }
 
-    .instagram-post:hover {
-      transform: scale(1.02);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    .post-ig:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    .quienes-somos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
+    /* Contacto */
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
-    .quienes-somos .texto {
-      flex: 1 1 400px;
+    .contact-info a {
+        color: #C19C00;
+        font-weight: 600;
     }
 
-    .quienes-somos img {
-      flex: 0 0 250px;
-      max-width: 100%;
-      border-radius: 12px;
+    iframe {
+        width: 100%;
+        max-width: 600px;
+        height: 400px;
+        border: 0;
+        border-radius: 12px;
     }
 
-    .contacto {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .contacto .info {
-      flex: 1 1 300px;
-    }
-
-    .contacto .mapa {
-      flex: 1 1 400px;
-    }
-
+    /* Botón flotante WhatsApp con ícono */
     .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      text-decoration: none;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      z-index: 1000;
-      transition: transform 0.3s;
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #25D366;
+        color: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        transition: transform 0.3s;
     }
 
     .whatsapp-float:hover {
-      transform: scale(1.1);
+        transform: scale(1.1);
     }
 
-    @media(max-width: 768px){
-      .quienes-somos {
-        flex-direction: column;
-      }
-
-      .contacto {
-        flex-direction: column;
-      }
+    /* Responsive */
+    @media(max-width:768px) {
+        header { flex-direction: column; gap: 10px; }
+        nav { flex-wrap: wrap; justify-content: center; }
+        .quienes-somos-container { flex-direction: column; gap: 20px; }
     }
-  </style>
+</style>
 </head>
 <body>
 
 <header>
-  <img src="Leon Logo.png" alt="Leon Automotores">
-  <nav>
-    <a href="#quienes-somos">Quienes Somos</a>
-    <a href="#posts">Posts</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+    <img src="leon-logo.png" alt="León Automotores Logo">
+    <nav>
+        <a href="#quienes-somos">QUIENES SOMOS</a>
+        <a href="#novedades">NOVEDADES</a>
+        <a href="#nuestra-flota">NUESTRA FLOTA</a>
+        <a href="#contacto">CONTACTANOS</a>
+    </nav>
 </header>
 
-<section class="hero">
-  <h1>SOMOS DE PALABRA</h1>
-  <p>Compra de autos simple, seguro y transparente.</p>
-  <a href="#contacto" class="button-outline">Contactanos</a>
-</section>
-
+<!-- Sección Quiénes Somos -->
 <section id="quienes-somos">
-  <h2>Quienes Somos</h2>
-  <div class="quienes-somos">
-    <div class="texto">
-      <p>En Leon Automotores, creemos que comprar un auto debe ser simple, seguro y transparente. Por eso te ofrecemos autos verificados, asesoramiento a la medida de tus intereses y necesidades, y acompañamiento constante durante todo el proceso. Nuestra trayectoria y enfoque innovador nos permiten brindar un servicio sólido, donde la confianza y la satisfacción siempre van de la mano. Sabemos lo que hacemos, cumplimos con lo que prometemos. Somos de palabra.</p>
+    <h2>QUIENES SOMOS</h2>
+    <div class="quienes-somos-container">
+        <div class="quienes-somos-text">
+            <p>En Leon Automotores, creemos que comprar un auto debe ser simple, seguro y transparente. Por eso te ofrecemos autos verificados, asesoramiento a la medida de tus intereses y necesidades, y acompañamiento constante durante todo el proceso. Nuestra trayectoria y enfoque innovador nos permiten brindar un servicio sólido, donde la confianza y la satisfacción siempre van de la mano. Sabemos lo que hacemos, cumplimos con lo que prometemos. Somos de palabra.</p>
+        </div>
+        <div class="quienes-somos-foto">
+            <!-- Aquí se puede poner la foto del gerente -->
+        </div>
     </div>
-    <img src="gerente.jpg" alt="Gerente">
-  </div>
 </section>
 
-<section id="posts">
-  <h2>Últimos Posts</h2>
-  <div class="posts">
-    <!-- Post 1 -->
-    <div class="instagram-post">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTeA8ajEYH1/" data-instgrm-version="14"></blockquote>
+<!-- Sección Novedades -->
+<section id="novedades">
+    <h2>NOVEDADES</h2>
+    <div class="posts">
+        <!-- Posteos fijos de Instagram -->
+        <div class="post-ig">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTeA8ajEYH1/?utm_source=ig_embed" data-instgrm-version="14" style="width:100%;"></blockquote>
+        </div>
+        <div class="post-ig">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTLK8KwkQ1c/?utm_source=ig_embed" data-instgrm-version="14" style="width:100%;"></blockquote>
+        </div>
+        <div class="post-ig">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTNhGNTkYyf/?utm_source=ig_embed" data-instgrm-version="14" style="width:100%;"></blockquote>
+        </div>
+        <div class="post-ig">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTIiIP4Efxy/?utm_source=ig_embed" data-instgrm-version="14" style="width:100%;"></blockquote>
+        </div>
+        <div class="post-ig">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTIi7w0k8g1/?utm_source=ig_embed" data-instgrm-version="14" style="width:100%;"></blockquote>
+        </div>
+        <div class="post-ig">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTLZlZtJ3tV/?utm_source=ig_embed" data-instgrm-version="14" style="width:100%;"></blockquote>
+        </div>
     </div>
-    <!-- Post 2 -->
-    <div class="instagram-post">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTLK8KwkQ1c/" data-instgrm-version="14"></blockquote>
-    </div>
-    <!-- Post 3 -->
-    <div class="instagram-post">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTNhGNTkYyf/" data-instgrm-version="14"></blockquote>
-    </div>
-    <!-- Post 4 -->
-    <div class="instagram-post">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTIiIP4Efxy/" data-instgrm-version="14"></blockquote>
-    </div>
-    <!-- Post 5 -->
-    <div class="instagram-post">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTXYZ/" data-instgrm-version="14"></blockquote>
-    </div>
-    <!-- Post 6 -->
-    <div class="instagram-post">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTABC/" data-instgrm-version="14"></blockquote>
-    </div>
-  </div>
 </section>
 
+<!-- Sección Nuestra Flota -->
+<section id="nuestra-flota">
+    <h2>NUESTRA FLOTA</h2>
+    <p style="text-align:center; max-width:800px; margin:0 auto;">
+        Contamos con una amplia variedad de vehículos, desde autos compactos hasta SUVs de alta gama. Cada unidad revisada y lista para entregar.
+    </p>
+</section>
+
+<!-- Sección Contacto -->
 <section id="contacto">
-  <h2>Contacto</h2>
-  <div class="contacto">
-    <div class="info">
-      <p><strong>Dirección:</strong> Buenos Aires 1166, Rio Cuarto, Córdoba (CP X5800)</p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/5493584828385?text=Hola!%20Tengo%20una%20consulta%20para%20hacerles..." target="_blank">Enviar mensaje</a></p>
-      <p><strong>Email:</strong> <a href="mailto:Consultas.leonautomotores@gmail.com">Consultas.leonautomotores@gmail.com</a></p>
+    <h2>CONTACTANOS</h2>
+    <div class="contact-info">
+        <p><strong>Dirección:</strong> Buenos Aires 1166, Río Cuarto, Córdoba (CP X5800)</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5493584828385?text=Hola!%20Tengo%20una%20consulta%20para%20hacerles..." target="_blank">+54 9 3584 828385</a></p>
+        <p><strong>Email:</strong> <a href="mailto:Consultas.leonautomotores@gmail.com">Consultas.leonautomotores@gmail.com</a></p>
     </div>
-    <div class="mapa">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.733409988163!2d-64.39897168479887!3d-33.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xabcdef1234567890!2sBuenos%20Aires%201166%2C%20Rio%20Cuarto%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1600000000000!5m2!1ses!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </div>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.955622053951!2d-64.35813268479658!3d-33.12336298078951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cd2d2e0dcf1ff5%3A0x78b6b74e11cfa3eb!2sBuenos%20Aires%201166%2C%20R%C3%ADo%20Cuarto%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1705510622234!5m2!1ses!2sar"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
-<a href="https://wa.me/5493584828385?text=Hola!%20Tengo%20una%20consulta%20para%20hacerles..." class="whatsapp-float" target="_blank">💬</a>
+<!-- Botón flotante WhatsApp con ícono -->
+<a href="https://wa.me/5493584828385?text=Hola!%20Tengo%20una%20consulta%20para%20hacerles..." target="_blank" class="whatsapp-float">
+    <img src="whatsapp-icon.png" alt="WhatsApp" style="width:30px; height:30px;">
+</a>
 
 <script async src="//www.instagram.com/embed.js"></script>
-
-<script>
-  // Scroll al top al refrescar la página
-  window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
-  });
-</script>
 
 </body>
 </html>
