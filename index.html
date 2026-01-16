@@ -16,7 +16,7 @@
         box-sizing: border-box;
     }
 
-    /* Tipografía unificada para toda la página */
+    /* Tipografía unificada */
     body, html, h1, h2, h3, h4, h5, h6, p, a, div {
         font-family: 'Alibaba Sans', Arial, sans-serif;
         color: #1c1c1c;
@@ -24,7 +24,7 @@
 
     body, html {
         height: 100%;
-        scroll-behavior: auto; /* scroll instantáneo a secciones */
+        scroll-behavior: smooth; /* scroll suave */
     }
 
     /* Hero */
@@ -41,13 +41,13 @@
     }
 
     .hero img {
-        max-width: 500px; /* logo doble tamaño */
+        max-width: 500px;
         width: 100%;
         height: auto;
         margin-bottom: 40px;
     }
 
-    /* Botones dorado premium con degradado y sombra */
+    /* Botones estilo outline premium */
     .hero .buttons {
         display: flex;
         gap: 20px;
@@ -58,18 +58,18 @@
     .hero .buttons a {
         text-decoration: none;
         padding: 12px 25px;
-        background: linear-gradient(45deg, #D4AF37, #B7952D); /* degradado dorado */
-        color: #1c1c1c;
+        border: 2px solid #D4AF37; /* borde dorado */
+        color: #D4AF37; /* texto dorado */
+        background-color: transparent;
         font-weight: 700;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        border-radius: 8px;
+        transition: all 0.3s;
     }
 
     .hero .buttons a:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        background: linear-gradient(45deg, #B7952D, #D4AF37); /* hover invertido */
+        background-color: #D4AF37; /* relleno dorado al hover */
+        color: #1c1c1c; /* texto oscuro */
+        transform: translateY(-2px);
     }
 
     /* Secciones */
@@ -117,6 +117,14 @@
         overflow: hidden;
         border-radius: 8px;
         background-color: #f0f0f0;
+
+        /* efecto hover premium */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .insta-post:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.25);
     }
 
     .insta-post img {
@@ -167,7 +175,7 @@
     </div>
 </section>
 
-<!-- Secciones placeholder para anclas -->
+<!-- Secciones -->
 <section id="quienes-somos">
     <h2>QUIENES SOMOS</h2>
     <p>Aquí va el contenido institucional sobre la empresa.</p>
