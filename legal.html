@@ -139,7 +139,17 @@
             <p><strong>1. Identidad y datos de contacto</strong><br>
             En cumplimiento de la <strong>Ley 25.326 de Protección de Datos Personales</strong>, nosotros, <strong>LEONMA AUTOMOTORES S.A.S.</strong> con domicilio en Calle Gaudard Carlos 1461, piso 1, departamento B, Río Cuarto, Córdoba, CP X5800, República Argentina, y CUIT 30-71849867-4, somos responsables del tratamiento de los datos personales que usted nos proporcione a través de este sitio web <strong>www.leonautomotores.com.ar</strong>.</p>
 
-            <!-- resto del contenido -->
+            <p><strong>2. Datos recolectados</strong><br>
+            Podremos recopilar información como nombre, correo electrónico, teléfono, datos del vehículo, y cualquier información que el usuario decida proporcionar mediante formularios o consultas en nuestro sitio.</p>
+
+            <p><strong>3. Finalidad del tratamiento</strong><br>
+            Sus datos serán utilizados únicamente para brindar nuestros servicios, responder consultas, gestionar la venta de vehículos y cumplir con obligaciones legales.</p>
+
+            <p><strong>4. Derechos ARCO</strong><br>
+            Usted puede ejercer los derechos de acceso, rectificación, cancelación y oposición (ARCO) enviando un correo a <strong>legal.leonautomotores@gmail.com</strong>.</p>
+
+            <p><strong>5. Seguridad de los datos</strong><br>
+            Implementamos medidas de seguridad para proteger sus datos personales contra acceso no autorizado, alteración, divulgación o destrucción.</p>
         </div>
     </div>
 
@@ -150,7 +160,17 @@
             <p><strong>1. Aceptación</strong><br>
             El acceso y uso de este sitio web <strong>www.leonautomotores.com.ar</strong> (en adelante, el “Sitio”) se rige por estos Términos y Condiciones. El uso del Sitio implica la aceptación de ellos.</p>
 
-            <!-- resto del contenido -->
+            <p><strong>2. Uso permitido</strong><br>
+            El usuario se compromete a utilizar el Sitio únicamente para fines lícitos y de acuerdo con la normativa vigente.</p>
+
+            <p><strong>3. Propiedad intelectual</strong><br>
+            Todo el contenido del Sitio, incluyendo textos, imágenes, logotipos y diseño, es propiedad de <strong>LEONMA AUTOMOTORES S.A.S.</strong> y está protegido por la legislación sobre propiedad intelectual.</p>
+
+            <p><strong>4. Limitación de responsabilidad</strong><br>
+            Leon Automotores no se responsabiliza por daños directos o indirectos que puedan derivarse del acceso o uso del Sitio.</p>
+
+            <p><strong>5. Ley aplicable y jurisdicción</strong><br>
+            Estos términos se rigen por la legislación argentina. La jurisdicción competente será la ciudad de Río Cuarto, Provincia de Córdoba.</p>
         </div>
     </div>
 
@@ -184,35 +204,4 @@
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
                 content.style.paddingTop = "15px";
-                content.style.paddingBottom = "15px";
-                button.classList.add("active");
-            }
-        });
-    });
-
-    // Click en fondo del acordeón para cerrar
-    const contents = document.querySelectorAll(".accordion-content");
-    contents.forEach(content => {
-        content.addEventListener("click", (e) => {
-            if (e.target === content) { // solo fondo
-                const button = content.previousElementSibling;
-                content.style.maxHeight = null;
-                content.style.paddingTop = "0";
-                content.style.paddingBottom = "0";
-                button.classList.remove("active");
-            }
-        });
-    });
-
-    // Cerrar ventana
-    function cerrarVentana() {
-        if (window.opener || window.open('', '_self')) {
-            window.close();
-        } else {
-            alert('Por favor cierre la pestaña manualmente.');
-        }
-    }
-</script>
-
-</body>
-</html>
+                content.style.paddi
