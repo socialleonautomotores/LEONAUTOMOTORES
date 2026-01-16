@@ -86,16 +86,31 @@
         overflow: hidden;
         transition: max-height 0.5s ease, padding 0.3s ease;
         box-sizing: border-box;
-        cursor: pointer; /* click en fondo para cerrar */
+        position: relative;
     }
 
     .accordion-content p, .accordion-content ul {
         margin: 15px 0;
         color: #fff;
-        cursor: default; /* evitar cerrar al click en texto */
     }
 
     ul { margin-left: 20px; }
+
+    /* Leyenda "Contraer" */
+    .contraer {
+        text-align: right;
+        font-size: 14px;
+        color: #D4AF37;
+        cursor: pointer;
+        margin-top: 10px;
+        text-decoration: underline;
+        transition: color 0.3s;
+    }
+
+    .contraer:hover {
+        color: #fff;
+        text-shadow: none;
+    }
 
     /* Botón Cerrar */
     .close-btn {
@@ -123,6 +138,7 @@
     @media (max-width: 600px) {
         .accordion button { font-size: 16px; }
         .close-btn { padding: 10px 30px; font-size: 16px; }
+        .contraer { font-size: 12px; }
     }
 </style>
 </head>
@@ -150,6 +166,8 @@
 
             <p><strong>5. Seguridad de los datos</strong><br>
             Implementamos medidas de seguridad para proteger sus datos personales contra acceso no autorizado, alteración, divulgación o destrucción.</p>
+
+            <div class="contraer">Contraer</div>
         </div>
     </div>
 
@@ -171,6 +189,8 @@
 
             <p><strong>5. Ley aplicable y jurisdicción</strong><br>
             Estos términos se rigen por la legislación argentina. La jurisdicción competente será la ciudad de Río Cuarto, Provincia de Córdoba.</p>
+
+            <div class="contraer">Contraer</div>
         </div>
     </div>
 
@@ -204,4 +224,37 @@
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
                 content.style.paddingTop = "15px";
-                content.style.paddi
+                content.style.paddingBottom = "15px";
+                button.classList.add("active");
+            }
+        });
+    });
+
+    // Contraer al hacer click en "Contraer" o en fondo
+    const contents = document.querySelectorAll(".accordion-content");
+    contents.forEach(content => {
+        content.addEventListener("click", (e) => {
+            const button = content.previousElementSibling;
+
+            // Click en fondo (no en los hijos) o en "Contraer"
+            if (e.target === content || e.target.classList.contains('contraer')) {
+                content.style.maxHeight = null;
+                content.style.paddingTop = "0";
+                content.style.paddingBottom = "0";
+                button.classList.remove("active");
+            }
+        });
+    });
+
+    // Botón cerrar
+    function cerrarVentana() {
+        if (window.opener || window.open('', '_self')) {
+            window.close();
+        } else {
+            alert('Por favor cierre la pestaña manualmente.');
+        }
+    }
+</script>
+
+</body>
+</html>
