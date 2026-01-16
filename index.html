@@ -11,6 +11,9 @@
 <!-- Google Fonts: Alibaba Sans -->
 <link href="https://fonts.googleapis.com/css2?family=Alibaba+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+<!-- Icono Instagram (FontAwesome CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yDsmn8iE+wOd0nP7j9kJfL/nqO1PZ27N+VQ8l0XXe6NEUuZyD6i1dqDkZpI8JpGxQGf1n+Q9ljG+QhVxK15FhQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <style>
     /* Reset básico */
     * {
@@ -28,6 +31,7 @@
     body, html {
         height: 100%;
         scroll-behavior: smooth; /* scroll suave */
+        scroll-duration: 0.4s; /* para navegadores que lo soporten */
     }
 
     /* Hero */
@@ -114,26 +118,49 @@
     }
 
     .insta-post {
+        position: relative;
         width: 100%;
         max-width: 200px;
         aspect-ratio: 1 / 1;
         overflow: hidden;
         border-radius: 8px;
         background-color: #f0f0f0;
-
-        /* efecto hover premium */
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .insta-post:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        cursor: pointer;
     }
 
     .insta-post img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
+    }
+
+    /* Hover con zoom y sombra */
+    .insta-post:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    }
+
+    /* Icono Instagram sobre la imagen */
+    .insta-post::after {
+        content: "\f16d"; /* icono Instagram de FontAwesome */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .insta-post:hover::after {
+        opacity: 1;
     }
 
     /* Responsive */
