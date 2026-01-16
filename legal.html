@@ -86,30 +86,16 @@
         overflow: hidden;
         transition: max-height 0.6s ease, padding 0.3s ease;
         box-sizing: border-box;
+        cursor: pointer; /* para indicar que se puede clickear el fondo */
     }
 
     .accordion-content p, .accordion-content ul {
         margin: 15px 0;
         color: #fff;
+        cursor: default; /* evita que los párrafos se cierren al click */
     }
 
     ul { margin-left: 20px; }
-
-    /* "Contraer" al final de cada acordeón */
-    .contraer {
-        text-align: right;
-        font-size: 14px;
-        color: #D4AF37;
-        cursor: pointer;
-        margin-top: 10px;
-        text-decoration: underline;
-        transition: text-shadow 0.4s, color 0.4s;
-    }
-
-    .contraer:hover {
-        color: #fff;
-        text-shadow: 0 0 12px #D4AF37, 0 0 20px #D4AF37;
-    }
 
     /* Botón Cerrar */
     .close-btn {
@@ -138,7 +124,6 @@
     @media (max-width: 600px) {
         .accordion button { font-size: 16px; }
         .close-btn { padding: 10px 30px; font-size: 16px; }
-        .contraer { font-size: 12px; }
     }
 </style>
 </head>
@@ -155,10 +140,7 @@
             <p><strong>1. Identidad y datos de contacto</strong><br>
             En cumplimiento de la <strong>Ley 25.326 de Protección de Datos Personales</strong>, nosotros, <strong>LEONMA AUTOMOTORES S.A.S.</strong> con domicilio en Calle Gaudard Carlos 1461, piso 1, departamento B, Río Cuarto, Córdoba, CP X5800, República Argentina, y CUIT 30-71849867-4, somos responsables del tratamiento de los datos personales que usted nos proporcione a través de este sitio web <strong>www.leonautomotores.com.ar</strong>.</p>
 
-            <!-- resto del contenido -->
-
-            <!-- Contraer -->
-            <div class="contraer">Contraer</div>
+            <!-- resto del contenido del Aviso de Privacidad -->
         </div>
     </div>
 
@@ -169,10 +151,7 @@
             <p><strong>1. Aceptación</strong><br>
             El acceso y uso de este sitio web <strong>www.leonautomotores.com.ar</strong> (en adelante, el “Sitio”) se rige por estos Términos y Condiciones. El uso del Sitio implica la aceptación de ellos.</p>
 
-            <!-- resto del contenido -->
-
-            <!-- Contraer -->
-            <div class="contraer">Contraer</div>
+            <!-- resto del contenido de Términos y Condiciones -->
         </div>
     </div>
 
@@ -181,7 +160,7 @@
 </div>
 
 <script>
-    // Acordeón
+    // Acordeón principal
     const accordions = document.querySelectorAll(".accordion button");
 
     accordions.forEach(button => {
@@ -214,17 +193,18 @@
         });
     });
 
-    // Contraer al final
-    const contraerBtns = document.querySelectorAll(".contraer");
-    contraerBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const content = btn.parentElement;
-            const button = content.previousElementSibling;
+    // Cerrar acordeón haciendo click sobre el fondo
+    const contents = document.querySelectorAll(".accordion-content");
 
-            content.style.maxHeight = null;
-            content.style.paddingTop = "0";
-            content.style.paddingBottom = "0";
-            button.classList.remove("active");
+    contents.forEach(content => {
+        content.addEventListener("click", (e) => {
+            if (e.target === content) { // solo si se clickea el fondo
+                const button = content.previousElementSibling;
+                content.style.maxHeight = null;
+                content.style.paddingTop = "0";
+                content.style.paddingBottom = "0";
+                button.classList.remove("active");
+            }
         });
     });
 
