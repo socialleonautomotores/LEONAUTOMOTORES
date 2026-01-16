@@ -43,7 +43,7 @@ section { padding:80px 20px; text-align:center; }
     background-color:#f9f9f9;
 }
 #quienes-somos .texto { flex:1 1 400px; max-width:600px; text-align:justify; }
-#quienes-somos .texto p { font-style: italic; text-align: justify; }
+#quienes-somos .texto p { font-style: italic; text-align: justify; line-height: 1.5; }
 #quienes-somos .foto-gerente {
     flex:0 0 70px;
     border-radius:50%;
@@ -84,7 +84,18 @@ section { padding:80px 20px; text-align:center; }
 #contactenos h2 { margin-bottom:40px; }
 #contactenos .contact-info { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; align-items:stretch; }
 #contactenos .mapa, #contactenos .formulario { flex:1 1 400px; max-width:500px; }
-#contactenos iframe { width:100%; height:100%; border:0; border-radius:8px; }
+
+/* Mapa responsivo */
+.mapa {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    border-radius:8px; overflow:hidden;
+}
+.mapa iframe {
+    position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+}
+
 #contactenos input, #contactenos select, #contactenos textarea {
     width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px; font-family:'Alibaba Sans', sans-serif;
 }
@@ -107,9 +118,9 @@ footer a:hover { text-decoration:underline; }
 .whatsapp-float:hover, .backtotop-float:hover { transform:scale(1.1); }
 
 @media(max-width:768px){
-    #quienes-somos { flex-direction:column; }
+    #quienes-somos { flex-direction:column; gap:15px; } /* reducir espacio entre texto y foto */
     #contactenos .contact-info { flex-direction:column; }
-    .hero img { max-width:360px; }
+    .hero img { max-width:360px; margin-bottom:20px; } /* subir logo */
     .hero .buttons { gap:10px; }
     .hero .buttons a { padding:10px 18px; font-size:0.9rem; }
     .insta-post { flex:0 0 40%; }
@@ -177,6 +188,7 @@ footer a:hover { text-decoration:underline; }
                 allowfullscreen="" 
                 loading="lazy">
             </iframe>
+            <p style="margin-top:5px; font-size:0.9rem;"><a href="https://goo.gl/maps/5o5D7Nf3XeB2" target="_blank">Abrir en Google Maps</a></p>
         </div>
         <div class="formulario">
             <form action="mailto:Consultas.leonautomotores@gmail.com" method="post" enctype="text/plain">
@@ -213,16 +225,14 @@ footer a:hover { text-decoration:underline; }
 <a href="https://wa.me/5493584828385?text=Hola!%20Tengo%20una%20consulta%20para%20hacerles..." class="whatsapp-float" target="_blank">💬</a>
 <a href="#top" class="backtotop-float">⬆</a>
 
-<!-- Scripts -->
 <script>
 // Scroll al top al refrescar
 window.addEventListener('load', () => { window.scrollTo(0,0); });
 
-// Carrusel infinito con flechas
+// Carrusel infinito con flechas y touch
 const carousel = document.querySelector('.instagram-grid');
 const posts = Array.from(carousel.children);
 posts.forEach(post => carousel.appendChild(post.cloneNode(true))); // duplicar para loop
-
 const postWidth = posts[0].offsetWidth + 15;
 let index = 0;
 
@@ -241,6 +251,19 @@ document.querySelector('.left-btn').addEventListener('click', () => {
 document.querySelector('.right-btn').addEventListener('click', () => {
     index = (index + 1) % posts.length;
     carousel.scrollTo({ left: index * postWidth, behavior: 'smooth' });
+});
+
+// Touch swipe para móviles
+let startX = 0;
+let scrollLeft = 0;
+carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+});
+carousel.addEventListener('touchmove', (e) => {
+    const x = e.touches[0].pageX - carousel.offsetLeft;
+    const walk = (startX - x);
+    carousel.scrollLeft = scrollLeft + walk;
 });
 </script>
 
