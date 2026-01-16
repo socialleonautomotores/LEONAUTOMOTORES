@@ -69,9 +69,9 @@ section { padding:80px 20px; text-align:center; }
 }
 #quienes-somos .texto { flex:1 1 400px; max-width:600px; text-align:justify; }
 #quienes-somos .foto-gerente { 
-    flex:0 0 250px; 
+    flex:0 0 160px;
     max-width:100%; 
-    border-radius:50%; /* Foto redonda */
+    border-radius:50%;
 }
 
 /* Novedades / Carrusel */
@@ -79,14 +79,40 @@ section { padding:80px 20px; text-align:center; }
 #novedades h2 { font-size:2rem; margin-bottom:10px; color:#1c1c1c; }
 #novedades p { font-size:1rem; margin-bottom:40px; color:#555; }
 
-.instagram-grid {
-    display:flex;
-    overflow-x:auto;
-    gap:15px;
-    scroll-behavior:smooth;
-    padding-bottom:10px;
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.instagram-grid::-webkit-scrollbar { display:none; }
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+.carousel-btn:hover { background-color: rgba(0,0,0,0.8); }
+.left-btn { left: 0; }
+.right-btn { right: 0; }
+
+.instagram-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+    width: 90%;
+}
+.instagram-grid::-webkit-scrollbar { display: none; }
 
 .insta-post {
     flex:0 0 auto;
@@ -94,6 +120,7 @@ section { padding:80px 20px; text-align:center; }
     aspect-ratio:1/1;
     border-radius:8px;
     background-color:#f0f0f0;
+    scroll-snap-align: start;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor:pointer;
 }
@@ -110,11 +137,15 @@ section { padding:80px 20px; text-align:center; }
     flex-wrap:wrap;
     justify-content:center;
     gap:30px;
-    align-items:flex-start;
+    align-items:stretch;
 }
-#contactenos .mapa { flex:1 1 400px; max-width:500px; }
-#contactenos .formulario { flex:1 1 400px; max-width:500px; text-align:left; }
-#contactenos input, #contactenos textarea {
+#contactenos .mapa, #contactenos .formulario {
+    flex:1 1 400px;
+    max-width:500px;
+}
+#contactenos iframe { width:100%; height:100%; border:0; border-radius:8px; }
+
+#contactenos input, #contactenos select, #contactenos textarea {
     width:100%;
     padding:10px;
     margin-bottom:15px;
@@ -141,8 +172,9 @@ footer {
     padding:20px;
     font-size:0.9rem;
     text-align:center;
+    line-height:1.6;
 }
-footer a { color:white; text-decoration:none; }
+footer a { color:white; text-decoration:none; white-space:nowrap; }
 footer a:hover { text-decoration:underline; }
 
 /* Botones flotantes */
@@ -173,6 +205,7 @@ footer a:hover { text-decoration:underline; }
     .hero img { max-width:360px; }
     .hero .buttons { gap:10px; }
     .hero .buttons a { padding:10px 18px; font-size:0.9rem; }
+    .instagram-grid { gap:10px; }
     .insta-post { width:150px; }
 }
 </style>
@@ -199,17 +232,22 @@ footer a:hover { text-decoration:underline; }
     <img src="gerente.jpg" alt="Gerente" class="foto-gerente">
 </section>
 
-<!-- Novedades -->
+<!-- Novedades / Carrusel -->
 <section id="novedades">
     <h2>Novedades</h2>
     <p>Mirá nuestras últimas publicaciones en Instagram.</p>
-    <div class="instagram-grid">
-        <div class="insta-post"><img src="post1.jpg" alt="Post 1"></div>
-        <div class="insta-post"><img src="post2.jpg" alt="Post 2"></div>
-        <div class="insta-post"><img src="post3.jpg" alt="Post 3"></div>
-        <div class="insta-post"><img src="post4.jpg" alt="Post 4"></div>
-        <div class="insta-post"><img src="post5.jpg" alt="Post 5"></div>
-        <div class="insta-post"><img src="post6.jpg" alt="Post 6"></div>
+
+    <div class="carousel-container">
+        <button class="carousel-btn left-btn">&#10094;</button>
+        <div class="instagram-grid">
+            <div class="insta-post"><img src="post1.jpg" alt="Post 1"></div>
+            <div class="insta-post"><img src="post2.jpg" alt="Post 2"></div>
+            <div class="insta-post"><img src="post3.jpg" alt="Post 3"></div>
+            <div class="insta-post"><img src="post4.jpg" alt="Post 4"></div>
+            <div class="insta-post"><img src="post5.jpg" alt="Post 5"></div>
+            <div class="insta-post"><img src="post6.jpg" alt="Post 6"></div>
+        </div>
+        <button class="carousel-btn right-btn">&#10095;</button>
     </div>
 </section>
 
@@ -224,16 +262,27 @@ footer a:hover { text-decoration:underline; }
     <h2>CONTACTANOS</h2>
     <div class="contact-info">
         <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"></iframe>
+            <iframe 
+                src="https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=Buenos+Aires+1166,+Rio+Cuarto,+Córdoba,+Argentina+X5800" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
             <p style="margin-top:10px;">Buenos Aires 1166 – Rio Cuarto – Córdoba – Argentina</p>
         </div>
         <div class="formulario">
             <form action="mailto:Consultas.leonautomotores@gmail.com" method="post" enctype="text/plain">
                 <input type="text" name="nombre" placeholder="Nombre" required>
                 <input type="text" name="apellido" placeholder="Apellido" required>
-                <input type="tel" name="telefono" placeholder="Teléfono" required>
+                <input type="tel" name="telefono" placeholder="Teléfono" required pattern="[0-9()+\-.\s]+" title="Solo números y caracteres de teléfono">
                 <input type="email" name="email" placeholder="Email" required>
-                <textarea name="comentarios" placeholder="Comentarios" rows="5" required></textarea>
+                <select name="opcion" required>
+                    <option value="">¿Cómo quiere tener su próximo auto?</option>
+                    <option value="Sistema llave por llave">Sistema llave por llave</option>
+                    <option value="Anticipos fijos y en pesos">Anticipos fijos y en pesos</option>
+                    <option value="Financiación a medida">Financiación a medida</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <textarea name="comentarios" placeholder="Comentarios" rows="5"></textarea>
                 <button type="submit">Enviar</button>
             </form>
         </div>
@@ -250,9 +299,41 @@ footer a:hover { text-decoration:underline; }
 <a href="https://wa.me/5493584828385?text=Hola!%20Tengo%20una%20consulta%20para%20hacerles..." class="whatsapp-float" target="_blank">💬</a>
 <a href="#top" class="backtotop-float">⬆</a>
 
-<!-- Scroll al top al refrescar -->
+<!-- Scripts -->
 <script>
+// Scroll al top al refrescar
 window.addEventListener('load', () => { window.scrollTo(0,0); });
+
+// Carrusel responsive con autoplay
+const carousel = document.querySelector('.instagram-grid');
+const btnLeft = document.querySelector('.left-btn');
+const btnRight = document.querySelector('.right-btn');
+let autoScrollInterval;
+
+function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+        const scrollAmount = window.innerWidth < 768 ? 160 : 220;
+        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    }, 5000);
+}
+
+carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+carousel.addEventListener('mouseleave', startAutoScroll);
+
+btnLeft.addEventListener('click', () => {
+    const scrollAmount = window.innerWidth < 768 ? 160 : 220;
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
+btnRight.addEventListener('click', () => {
+    const scrollAmount = window.innerWidth < 768 ? 160 : 220;
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
+
+window.addEventListener('load', startAutoScroll);
 </script>
 
 </body>
