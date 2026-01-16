@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leon Automotores - Políticas</title>
+<title>Leon Automotores</title>
 
 <!-- Fuente Alibaba Sans -->
 <link href="https://fonts.googleapis.com/css2?family=Alibaba+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Iconos (flechas) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 <style>
     body {
@@ -29,49 +32,51 @@
         max-width: 200px;
     }
 
-    h1 {
-        text-align: center;
-        color: #fff;
-        margin-bottom: 40px;
-    }
-
     .accordion {
         background-color: #111;
         border: 1px solid #333;
-        border-radius: 8px;
+        border-radius: 10px;
         margin-bottom: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.5);
     }
 
     .accordion button {
         background-color: #111;
         color: #fff;
         cursor: pointer;
-        padding: 18px;
+        padding: 20px;
         width: 100%;
         text-align: left;
         border: none;
         outline: none;
         font-size: 18px;
         font-weight: bold;
-        transition: background 0.3s;
-        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s, box-shadow 0.3s;
     }
 
     .accordion button:hover {
         background-color: #222;
+        box-shadow: 0 0 10px rgba(255,255,255,0.1);
     }
 
-    .accordion button.active {
-        background-color: #222;
+    .accordion button i {
+        transition: transform 0.3s;
+    }
+
+    .accordion button.active i {
+        transform: rotate(90deg);
     }
 
     .accordion-content {
-        padding: 0 18px;
+        padding: 0 20px;
         background-color: #111;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        border-top: 1px solid #333;
+        transition: max-height 0.5s ease, padding 0.3s ease;
     }
 
     .accordion-content p, .accordion-content ul {
@@ -90,11 +95,9 @@
     <!-- Logo -->
     <img src="leon-logo.png" alt="Leon Automotores" class="logo">
 
-    <h1>Políticas de Leon Automotores</h1>
-
     <!-- Acordeón Aviso de Privacidad -->
     <div class="accordion">
-        <button>Aviso de Privacidad</button>
+        <button><span>Aviso de Privacidad</span> <i class="fas fa-chevron-right"></i></button>
         <div class="accordion-content">
             <p><strong>1. Identidad y datos de contacto</strong><br>
             En cumplimiento de la <strong>Ley 25.326 de Protección de Datos Personales</strong>, nosotros, <strong>LEONMA AUTOMOTORES S.A.S.</strong> con domicilio en Calle Gaudard Carlos 1461, piso 1, departamento B, Río Cuarto, Córdoba, CP X5800, República Argentina, y CUIT 30-71849867-4, somos responsables del tratamiento de los datos personales que usted nos proporcione a través de este sitio web <strong>www.leonautomotores.com.ar</strong>.</p>
@@ -111,4 +114,86 @@
 
             <p><strong>3. Finalidades del tratamiento</strong></p>
             <ul>
-                <li
+                <li>Contactarlo y responder sus solicitudes o consultas.</li>
+                <li>Gestionar consultas comerciales o solicitudes de servicios.</li>
+                <li>Enviarle comunicaciones comerciales, promociones y novedades (previo consentimiento si corresponde).</li>
+                <li>Mejorar el funcionamiento del sitio web y nuestros servicios.</li>
+            </ul>
+
+            <p><strong>4. Base legal y consentimiento</strong><br>
+            El tratamiento de sus datos se realiza con su consentimiento, prestado de forma libre, expresa e informada mediante la interacción con nuestros formularios o servicios.</p>
+
+            <p><strong>5. Conservación y seguridad</strong><br>
+            Conservaremos sus datos personales mientras subsista la finalidad para la cual fueron recolectados o hasta que usted manifieste su voluntad de revocación, teniendo en cuenta plazos legales aplicables. Aplicamos medidas técnicas y organizativas para proteger su confidencialidad.</p>
+
+            <p><strong>6. Derechos de los titulares de los datos</strong><br>
+            Puede ejercer sus derechos de acceso, rectificación, actualización, supresión o confidencialidad de sus datos, dirigiéndose por escrito a <strong>legal.leonautomotores@gmail.com</strong> con “Protección de Datos – Derecho ARCO” en el asunto.</p>
+
+            <p><strong>7. Cesión de datos a terceros</strong><br>
+            No cederemos sus datos personales a terceros, salvo que sea necesario para los fines aquí especificados, cuando exista obligación legal o con su consentimiento previo.</p>
+
+            <p><strong>8. Uso de cookies y tecnologías similares</strong><br>
+            Nuestro sitio puede utilizar cookies para mejorar su experiencia. Usted puede gestionar o deshabilitar las cookies desde su navegador.</p>
+
+            <p><strong>9. Modificaciones del aviso</strong><br>
+            Podremos actualizar este Aviso de Privacidad para adaptarlo a cambios legales, regulatorios o de nuestros servicios, publicando la nueva versión en este sitio web.</p>
+        </div>
+    </div>
+
+    <!-- Acordeón Términos y Condiciones -->
+    <div class="accordion">
+        <button><span>Términos y Condiciones</span> <i class="fas fa-chevron-right"></i></button>
+        <div class="accordion-content">
+            <p><strong>1. Aceptación</strong><br>
+            El acceso y uso de este sitio web <strong>www.leonautomotores.com.ar</strong> (en adelante, el “Sitio”) se rige por estos Términos y Condiciones. El uso del Sitio implica la aceptación de ellos.</p>
+
+            <p><strong>2. Uso del sitio</strong><br>
+            Usted se compromete a utilizar el Sitio de forma lícita y respetando las leyes vigentes, la moral, el orden público y estos Términos.</p>
+
+            <p><strong>3. Registro de usuario (si aplica)</strong><br>
+            Para determinados servicios, podría solicitarse registro de usuario. Usted garantiza la veracidad y actualidad de los datos aportados y se responsabiliza de mantenerlos actualizados.</p>
+
+            <p><strong>4. Propiedad intelectual</strong><br>
+            Todo el contenido del Sitio (textos, imágenes, marcas, logotipos) es titularidad de Leon Automotores o de terceros que han autorizado su uso. Queda prohibida su reproducción total o parcial sin autorización expresa.</p>
+
+            <p><strong>5. Responsabilidad</strong><br>
+            Leon Automotores no garantiza que el Sitio esté libre de errores, interrupciones o virus. En la medida permitida por la ley, no será responsable por daños directos o indirectos derivados del uso del Sitio.</p>
+
+            <p><strong>6. Enlaces a terceros</strong><br>
+            El Sitio puede contener enlaces a sitios de terceros. Estos no están bajo nuestro control y no asumimos responsabilidad por su contenido o políticas.</p>
+
+            <p><strong>7. Protección de datos personales</strong><br>
+            El tratamiento de sus datos personales se regirá por nuestro <strong>Aviso de Privacidad</strong> y la <strong>Ley 25.326 de Protección de Datos Personales</strong> de la República Argentina.</p>
+
+            <p><strong>8. Modificaciones</strong><br>
+            Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento, publicando las versiones actualizadas en el Sitio.</p>
+
+            <p><strong>9. Ley aplicable y jurisdicción</strong><br>
+            Estos Términos se rigen por las leyes de la República Argentina. Cualquier controversia será sometida a la jurisdicción de los tribunales ordinarios con asiento en la ciudad de Río Cuarto, Departamento Río Cuarto, Córdoba, República Argentina.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Script del acordeón con flechas
+    const accordions = document.querySelectorAll(".accordion button");
+
+    accordions.forEach(button => {
+        button.addEventListener("click", () => {
+            const content = button.nextElementSibling;
+            button.classList.toggle("active");
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.style.paddingTop = "0";
+                content.style.paddingBottom = "0";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.paddingTop = "15px";
+                content.style.paddingBottom = "15px";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
