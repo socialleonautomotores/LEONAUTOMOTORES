@@ -89,7 +89,7 @@ section { padding:80px 20px; text-align:center; }
     flex-wrap:wrap;
     justify-content:center;
     gap:30px;
-    align-items: stretch; /* ambos hijos toman la altura del más alto */
+    align-items: stretch;
 }
 
 #contactenos .formulario {
@@ -107,15 +107,31 @@ section { padding:80px 20px; text-align:center; }
 }
 
 #contactenos .mapa iframe {
-    flex: 1; /* toma altura completa del contenedor mapa (igual que formulario) */
+    flex: 1;
     width: 100%;
 }
 
 #contactenos input, #contactenos select, #contactenos textarea {
     width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px; font-family:'Alibaba Sans', sans-serif;
 }
-#contactenos button { padding:12px 20px; background-color:#D4AF37; border:none; color:#1c1c1c; font-weight:700; border-radius:8px; cursor:pointer; transition: all 0.3s; }
-#contactenos button:hover { background-color:#b9932d; }
+
+/* Botón enviar estilo hero */
+#contactenos button {
+    padding: 12px 25px;
+    border: 2px solid #D4AF37; /* borde dorado */
+    color: #D4AF37; /* texto dorado */
+    background-color: transparent;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Alibaba Sans', sans-serif;
+}
+#contactenos button:hover {
+    background-color: #D4AF37; /* relleno dorado al hover */
+    color: #1c1c1c; /* texto oscuro */
+    transform: translateY(-2px);
+}
 
 /* Footer */
 footer { background-color:#1c1c1c; color:white !important; padding:20px; font-size:0.9rem; text-align:center; line-height:1.6; }
@@ -134,7 +150,10 @@ footer a:hover { text-decoration:underline; }
 
 /* Responsive */
 @media(max-width:768px){
-    #quienes-somos { flex-direction:column; gap:5px; }
+    #quienes-somos { 
+        flex-direction: column; 
+        gap: 2px; /* espacio mínimo entre párrafo y foto */
+    }
     #contactenos .contact-info { flex-direction:column; }
     .hero img { max-width:360px; margin-bottom:20px; }
     .hero .buttons { gap:10px; }
