@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>León Automotores</title>
 <link rel="icon" href="favicon.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Alibaba+Sans&display=swap" rel="stylesheet">
 <style>
     /* Reset básico */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Alibaba Sans', sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
 
     body {
         scroll-behavior: smooth;
@@ -43,7 +42,7 @@
 
     nav a {
         padding: 8px 18px;
-        border: 2px solid #C19C00; /* dorado manual de marca */
+        border: 2px solid #C19C00; /* dorado del manual de marca */
         border-radius: 25px;
         font-weight: 600;
         transition: 0.3s;
@@ -65,28 +64,6 @@
         font-size: 2em;
         margin-bottom: 30px;
         color: #C19C00;
-    }
-
-    /* Sección Quiénes Somos: texto + foto */
-    .quienes-somos-container {
-        display: flex;
-        gap: 40px;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .quienes-somos-text {
-        max-width: 600px;
-        text-align: justify;
-    }
-
-    .quienes-somos-foto {
-        width: 250px;
-        height: 250px;
-        background-color: #ddd;
-        border-radius: 12px;
-        flex-shrink: 0;
     }
 
     /* Novedades - Posts Instagram */
@@ -131,7 +108,7 @@
         border-radius: 12px;
     }
 
-    /* Botón flotante WhatsApp con ícono */
+    /* Botón flotante WhatsApp */
     .whatsapp-float {
         position: fixed;
         bottom: 25px;
@@ -158,14 +135,13 @@
     @media(max-width:768px) {
         header { flex-direction: column; gap: 10px; }
         nav { flex-wrap: wrap; justify-content: center; }
-        .quienes-somos-container { flex-direction: column; gap: 20px; }
     }
 </style>
 </head>
 <body>
 
 <header>
-    <img src="leon-logo.png" alt="León Automotores Logo">
+    <img src="Leon Logo.png" alt="León Automotores Logo">
     <nav>
         <a href="#quienes-somos">QUIENES SOMOS</a>
         <a href="#novedades">NOVEDADES</a>
@@ -177,14 +153,9 @@
 <!-- Sección Quiénes Somos -->
 <section id="quienes-somos">
     <h2>QUIENES SOMOS</h2>
-    <div class="quienes-somos-container">
-        <div class="quienes-somos-text">
-            <p>En Leon Automotores, creemos que comprar un auto debe ser simple, seguro y transparente. Por eso te ofrecemos autos verificados, asesoramiento a la medida de tus intereses y necesidades, y acompañamiento constante durante todo el proceso. Nuestra trayectoria y enfoque innovador nos permiten brindar un servicio sólido, donde la confianza y la satisfacción siempre van de la mano. Sabemos lo que hacemos, cumplimos con lo que prometemos. Somos de palabra.</p>
-        </div>
-        <div class="quienes-somos-foto">
-            <!-- Aquí se puede poner la foto del gerente -->
-        </div>
-    </div>
+    <p style="text-align:center; max-width:800px; margin:0 auto;">
+        Somos León Automotores, concesionaria en Río Cuarto dedicada a brindar vehículos de calidad, con atención personalizada y compromiso. Nuestra pasión es acompañarte en la elección de tu próximo auto.
+    </p>
 </section>
 
 <!-- Sección Novedades -->
@@ -236,9 +207,9 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
-<!-- Botón flotante WhatsApp con ícono -->
+<!-- Botón flotante WhatsApp -->
 <a href="https://wa.me/5493584828385?text=Hola!%20Tengo%20una%20consulta%20para%20hacerles..." target="_blank" class="whatsapp-float">
-    <img src="whatsapp-icon.png" alt="WhatsApp" style="width:30px; height:30px;">
+    🟢
 </a>
 
 <script async src="//www.instagram.com/embed.js"></script>
