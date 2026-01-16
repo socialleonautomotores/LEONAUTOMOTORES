@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leon Automotores</title>
+
+<!-- Google Fonts: Alibaba Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Alibaba+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 <style>
     /* Reset básico */
     * {
@@ -12,9 +16,14 @@
         box-sizing: border-box;
     }
 
+    /* Tipografía unificada para toda la página */
+    body, html, h1, h2, h3, h4, h5, h6, p, a, div {
+        font-family: 'Alibaba Sans', Arial, sans-serif;
+        color: #1c1c1c;
+    }
+
     body, html {
         height: 100%;
-        font-family: Arial, sans-serif;
     }
 
     /* Hero */
@@ -25,22 +34,25 @@
         align-items: center;
         text-align: center;
         height: 100vh; /* ocupa toda la pantalla */
-        background: linear-gradient(135deg, #1c1c1c, #333333); /* degradado oscuro */
+        background: linear-gradient(135deg, #1c1c1c, #333333); /* fondo premium oscuro */
         color: white;
+        padding: 0 20px;
     }
 
     .hero img {
-        max-width: 250px; /* ajusta según el tamaño de tu logo */
+        max-width: 250px; /* logo vertical o horizontal según versión */
         width: 100%;
         height: auto;
         margin-bottom: 20px;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-        letter-spacing: 2px;
+    /* Subtítulo / slogan */
+    .hero .subtitle {
+        font-size: 1.5rem; /* tamaño más pequeño */
+        font-weight: 500; /* regular/medium */
+        letter-spacing: 1px;
+        margin-bottom: 40px; /* aire premium */
         color: white;
-        margin-bottom: 30px;
     }
 
     /* Botones */
@@ -56,7 +68,7 @@
         padding: 12px 25px;
         background-color: #ffcc00; /* amarillo de contraste */
         color: #1c1c1c;
-        font-weight: bold;
+        font-weight: 700; /* bold */
         border-radius: 8px;
         transition: background-color 0.3s, transform 0.2s;
     }
@@ -68,8 +80,8 @@
 
     /* Responsive */
     @media (max-width: 600px) {
-        .hero h1 {
-            font-size: 1.8rem;
+        .hero .subtitle {
+            font-size: 1.2rem;
         }
 
         .hero img {
@@ -85,20 +97,58 @@
             font-size: 0.9rem;
         }
     }
+
+    /* Otras secciones básicas de la landing (placeholder) */
+    section {
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    #quienes-somos, #donde-estamos, #contactenos, #flota {
+        min-height: 400px;
+        background-color: #f9f9f9;
+        color: #1c1c1c;
+    }
 </style>
 </head>
 <body>
 
+<!-- Hero principal -->
 <section class="hero">
+    <!-- Logo oficial -->
     <img src="leon-logo.png" alt="Leon Automotores">
-    <h1>SOMOS DE PALABRA</h1>
 
+    <!-- Subtítulo / slogan -->
+    <div class="subtitle">SOMOS DE PALABRA</div>
+
+    <!-- Botones -->
     <div class="buttons">
         <a href="#quienes-somos">QUIENES SOMOS</a>
         <a href="#donde-estamos">DONDE ESTAMOS</a>
         <a href="#contactenos">CONTACTENOS</a>
         <a href="#flota">FLOTA</a>
     </div>
+</section>
+
+<!-- Secciones placeholder para anclas -->
+<section id="quienes-somos">
+    <h2>QUIENES SOMOS</h2>
+    <p>Aquí va el contenido institucional sobre la empresa.</p>
+</section>
+
+<section id="donde-estamos">
+    <h2>DONDE ESTAMOS</h2>
+    <p>Mapa o dirección de la agencia.</p>
+</section>
+
+<section id="contactenos">
+    <h2>CONTACTENOS</h2>
+    <p>Formulario de contacto o botón de WhatsApp.</p>
+</section>
+
+<section id="flota">
+    <h2>FLOTA</h2>
+    <p>Galería de vehículos disponibles.</p>
 </section>
 
 </body>
