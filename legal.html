@@ -113,10 +113,32 @@ ul { margin-left: 20px; }
 <button>Términos y Condiciones <i class="fas fa-chevron-right"></i></button>
 <div class="accordion-content">
 
-<!-- TEXTO ORIGINAL – SIN CAMBIOS -->
 <p><strong>1. Aceptación</strong><br>
-El acceso y uso de este sitio web www.leonautomotores.com.ar (en adelante, el “Sitio”) se rige por estos Términos y Condiciones...</p>
-<!-- (resto del texto intacto, igual al que enviaste) -->
+El acceso y uso de este sitio web www.leonautomotores.com.ar (en adelante, el “Sitio”) se rige por estos Términos y Condiciones. El uso del Sitio implica la aceptación de ellos.</p>
+
+<p><strong>2. Uso del sitio</strong><br>
+Usted se compromete a utilizar el Sitio de forma lícita y respetando las leyes vigentes.</p>
+
+<p><strong>3. Registro de usuario (si aplica)</strong><br>
+Para determinados servicios podría solicitarse registro.</p>
+
+<p><strong>4. Propiedad intelectual</strong><br>
+Todo el contenido del Sitio es titularidad de Leon Automotores.</p>
+
+<p><strong>5. Responsabilidad</strong><br>
+Leon Automotores no garantiza que el Sitio esté libre de errores.</p>
+
+<p><strong>6. Enlaces a terceros</strong><br>
+El Sitio puede contener enlaces a sitios de terceros.</p>
+
+<p><strong>7. Protección de datos personales</strong><br>
+El tratamiento se rige por la Ley 25.326.</p>
+
+<p><strong>8. Modificaciones</strong><br>
+Nos reservamos el derecho de modificar estos Términos.</p>
+
+<p><strong>9. Ley aplicable y jurisdicción</strong><br>
+Leyes de la República Argentina.</p>
 
 </div>
 </div>
@@ -126,19 +148,32 @@ El acceso y uso de este sitio web www.leonautomotores.com.ar (en adelante, el �
 <button>Aviso de Privacidad <i class="fas fa-chevron-right"></i></button>
 <div class="accordion-content">
 
-<!-- TEXTO ORIGINAL – SIN CAMBIOS -->
 <p><strong>1. Identidad y datos de contacto</strong><br>
-En cumplimiento de la Ley 25.326...</p>
+LEONMA AUTOMOTORES S.A.S. es responsable del tratamiento de los datos.</p>
 
-<!-- COMPLIANCE META + GOOGLE -->
-<p><strong>10. Publicidad y plataformas digitales</strong><br>
-Leon Automotores podrá utilizar plataformas publicitarias como Meta (Facebook e Instagram) y Google Ads para la difusión de anuncios comerciales. Estas plataformas pueden recopilar información de navegación de manera automática mediante tecnologías como píxeles, cookies o identificadores similares.</p>
+<p><strong>2. Datos que recopilamos</strong></p>
+<ul>
+<li>Nombre y apellido</li>
+<li>DNI / CUIT</li>
+<li>Correo electrónico</li>
+<li>Teléfono</li>
+</ul>
 
-<p><strong>11. Herramientas de analítica</strong><br>
-Este sitio puede utilizar herramientas de análisis como Google Analytics para comprender el comportamiento de los usuarios y mejorar la experiencia del sitio. La información recopilada es de carácter estadístico y no permite identificar personalmente al usuario.</p>
+<p><strong>3. Finalidades</strong></p>
+<ul>
+<li>Responder consultas</li>
+<li>Gestión comercial</li>
+<li>Comunicaciones promocionales</li>
+</ul>
 
-<p><strong>12. Consentimiento del usuario</strong><br>
-Al navegar y utilizar este sitio web, el usuario presta su consentimiento para el tratamiento de sus datos personales conforme a este Aviso de Privacidad, incluyendo el uso de cookies, tecnologías similares y herramientas de publicidad y analítica.</p>
+<p><strong>4. Consentimiento</strong><br>
+El usuario presta consentimiento al utilizar el sitio.</p>
+
+<p><strong>5. Derechos ARCO</strong><br>
+Escribiendo a legal.leonautomotores@gmail.com.</p>
+
+<p><strong>6. Publicidad y analítica</strong><br>
+Este sitio puede usar Google Analytics y Meta Ads.</p>
 
 </div>
 </div>
@@ -148,8 +183,17 @@ Al navegar y utilizar este sitio web, el usuario presta su consentimiento para e
 <button>Solicitud de Eliminación de Datos <i class="fas fa-chevron-right"></i></button>
 <div class="accordion-content">
 
-<!-- TEXTO ORIGINAL – SIN CAMBIOS -->
-<p>De conformidad con la Ley N.º 25.326...</p>
+<p>Puede solicitar la eliminación de sus datos conforme Ley 25.326.</p>
+
+<p>Enviar correo a <strong>legal.leonautomotores@gmail.com</strong> indicando:</p>
+
+<ul>
+<li>Nombre y apellido</li>
+<li>DNI</li>
+<li>Copia DNI frente y dorso</li>
+<li>Teléfono</li>
+<li>Solicitud expresa</li>
+</ul>
 
 </div>
 </div>
@@ -165,7 +209,7 @@ document.querySelectorAll(".accordion button").forEach(button => {
         const isOpen = button.classList.contains("active");
 
         document.querySelectorAll(".accordion-content").forEach(c => {
-            c.style.maxHeight = "0";
+            c.style.maxHeight = null;
             c.style.paddingTop = "0";
             c.style.paddingBottom = "0";
             c.previousElementSibling.classList.remove("active");
