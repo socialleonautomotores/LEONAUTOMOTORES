@@ -1,112 +1,219 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legales – Leon Automotores</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leon Automotores</title>
+
+<!-- Fuente -->
+<link href="https://fonts.googleapis.com/css2?family=Alibaba+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Iconos -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Alibaba Sans', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.logo {
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+}
+
+.accordion {
+    background: linear-gradient(145deg, #111, #1a1a1a);
+    border: 1px solid #333;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.7);
+}
+
+.accordion button {
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion button i {
+    transition: transform 0.3s ease;
+}
+
+.accordion button.active i {
+    transform: rotate(90deg);
+    color: #D4AF37;
+}
+
+.accordion-content {
+    padding: 0 20px;
+    background-color: #111;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.3s ease;
+}
+
+.accordion-content p,
+.accordion-content ul {
+    margin: 15px 0;
+}
+
+ul { margin-left: 20px; }
+
+.close-btn {
+    display: block;
+    margin: 40px auto 0;
+    padding: 12px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #D4AF37;
+    background: transparent;
+    border: 2px solid #D4AF37;
+    border-radius: 8px;
+    cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
-<h1>Información Legal – Leon Automotores</h1>
+<div class="container">
 
-<h2>Términos y Condiciones</h2>
-<p><strong>Términos y Condiciones – Leon Automotores</strong></p>
+<img src="leon-logo.png" alt="Leon Automotores" class="logo">
 
-<h3>1. Aceptación</h3>
-<p>El acceso y uso de este sitio web www.leonautomotores.com.ar (en adelante, el “Sitio”) se rige por estos Términos y Condiciones. El uso del Sitio implica la aceptación de ellos.</p>
+<!-- TÉRMINOS Y CONDICIONES -->
+<div class="accordion">
+<button><span>Términos y Condiciones</span><i class="fas fa-chevron-right"></i></button>
+<div class="accordion-content">
 
-<h3>2. Uso del sitio</h3>
-<p>Usted se compromete a utilizar el Sitio de forma lícita y respetando las leyes vigentes, la moral, el orden público y estos Términos.</p>
+<p><strong>1. Aceptación</strong><br>
+El acceso y uso de este sitio web www.leonautomotores.com.ar (en adelante, el “Sitio”) se rige por estos Términos y Condiciones. El uso del Sitio implica la aceptación de ellos.</p>
 
-<h3>3. Registro de usuario (si aplica)</h3>
-<p>Para determinados servicios, podría solicitarse registro de usuario. Usted garantiza la veracidad y actualidad de los datos aportados y se responsabiliza de mantenerlos actualizados.</p>
+<p><strong>2. Uso del sitio</strong><br>
+Usted se compromete a utilizar el Sitio de forma lícita y respetando las leyes vigentes, la moral, el orden público y estos Términos.</p>
 
-<h3>4. Propiedad intelectual</h3>
-<p>Todo el contenido del Sitio (textos, imágenes, marcas, logotipos) es titularidad de Leon Automotores o de terceros que han autorizado su uso. Queda prohibida su reproducción total o parcial sin autorización expresa.</p>
+<p><strong>3. Registro de usuario (si aplica)</strong><br>
+Para determinados servicios, podría solicitarse registro de usuario. Usted garantiza la veracidad y actualidad de los datos aportados y se responsabiliza de mantenerlos actualizados.</p>
 
-<h3>5. Responsabilidad</h3>
-<p>Leon Automotores no garantiza que el Sitio esté libre de errores, interrupciones o virus. En la medida permitida por la ley, no será responsable por daños directos o indirectos derivados del uso del Sitio.</p>
+<p><strong>4. Propiedad intelectual</strong><br>
+Todo el contenido del Sitio (textos, imágenes, marcas, logotipos) es titularidad de Leon Automotores o de terceros que han autorizado su uso.</p>
 
-<h3>6. Enlaces a terceros</h3>
-<p>El Sitio puede contener enlaces a sitios de terceros. Estos no están bajo nuestro control y no asumimos responsabilidad por su contenido o políticas.</p>
+<p><strong>5. Responsabilidad</strong><br>
+Leon Automotores no garantiza que el Sitio esté libre de errores, interrupciones o virus.</p>
 
-<h3>7. Protección de datos personales</h3>
-<p>El tratamiento de sus datos personales se regirá por nuestro Aviso de Privacidad y la Ley 25.326 de Protección de Datos Personales de la República Argentina.</p>
+<p><strong>6. Enlaces a terceros</strong><br>
+El Sitio puede contener enlaces a sitios de terceros.</p>
 
-<h3>8. Modificaciones</h3>
-<p>Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento, publicando las versiones actualizadas en el Sitio.</p>
+<p><strong>7. Protección de datos personales</strong><br>
+El tratamiento de sus datos personales se regirá por nuestro Aviso de Privacidad y la Ley 25.326.</p>
 
-<h3>9. Ley aplicable y jurisdicción</h3>
-<p>Estos Términos se rigen por las leyes de la República Argentina. Cualquier controversia será sometida a la jurisdicción de los tribunales ordinarios con asiento en la ciudad de Río Cuarto, Departamento Río Cuarto, Córdoba, República Argentina.</p>
+<p><strong>8. Modificaciones</strong><br>
+Nos reservamos el derecho de modificar estos Términos.</p>
 
-<hr>
+<p><strong>9. Ley aplicable y jurisdicción</strong><br>
+Jurisdicción de los tribunales ordinarios de Río Cuarto, Córdoba, Argentina.</p>
 
-<h2>Aviso de Privacidad</h2>
-<p><strong>Aviso de Privacidad – Leon Automotores</strong></p>
+</div>
+</div>
 
-<h3>1. Identidad y datos de contacto</h3>
-<p>En cumplimiento de la Ley 25.326 de Protección de Datos Personales (Ley de Habeas Data), nosotros, LEONMA AUTOMOTORES S.A.S. (en adelante, “Leon Automotores”), con domicilio en Calle Gaudard Carlos 1461, piso 1, departamento B, Río Cuarto, Córdoba, CP X5800, República Argentina, y CUIT 30-71849867-4, somos responsables del tratamiento de los datos personales que usted nos proporcione a través de este sitio web www.leonautomotores.com.ar.</p>
+<!-- AVISO DE PRIVACIDAD -->
+<div class="accordion">
+<button><span>Aviso de Privacidad</span><i class="fas fa-chevron-right"></i></button>
+<div class="accordion-content">
 
-<h3>2. Datos que recopilamos</h3>
+<p><strong>1. Identidad y datos de contacto</strong><br>
+LEONMA AUTOMOTORES S.A.S., CUIT 30-71849867-4.</p>
+
+<p><strong>2. Datos que recopilamos</strong></p>
 <ul>
-  <li>Nombre y apellido</li>
-  <li>DNI / CUIT</li>
-  <li>Dirección de correo electrónico</li>
-  <li>Número de teléfono</li>
-  <li>Datos de contacto o de la empresa</li>
-  <li>Información relacionada con consultas, solicitudes de servicios o suscripciones</li>
+<li>Nombre y apellido</li>
+<li>DNI / CUIT</li>
+<li>Correo electrónico</li>
+<li>Teléfono</li>
+<li>Datos comerciales</li>
 </ul>
 
-<h3>3. Finalidades del tratamiento</h3>
+<p><strong>3. Finalidades</strong></p>
 <ul>
-  <li>Contactarlo y responder sus solicitudes o consultas.</li>
-  <li>Gestionar consultas comerciales o solicitudes de servicios.</li>
-  <li>Enviarle comunicaciones comerciales, promociones y novedades (previo consentimiento si corresponde).</li>
-  <li>Mejorar el funcionamiento del sitio web y nuestros servicios.</li>
+<li>Gestión comercial</li>
+<li>Publicidad y marketing digital</li>
+<li>Analítica (Google / Meta)</li>
 </ul>
 
-<h3>4. Base legal y consentimiento</h3>
-<p>El tratamiento de sus datos se realiza con su consentimiento, prestado de forma libre, expresa e informada mediante la interacción con nuestros formularios o servicios.</p>
+<p><strong>6. Derechos ARCO</strong><br>
+Escribiendo a legal.leonautomotores@gmail.com</p>
 
-<h3>5. Conservación y seguridad</h3>
-<p>Conservaremos sus datos personales mientras subsista la finalidad para la cual fueron recolectados o hasta que usted manifieste su voluntad de revocación, teniendo en cuenta plazos legales aplicables. Aplicamos medidas técnicas y organizativas para proteger su confidencialidad.</p>
+</div>
+</div>
 
-<h3>6. Derechos de los titulares de los datos</h3>
-<p>Como titular de los datos, usted puede ejercer sus derechos de acceso, rectificación, actualización, supresión o confidencialidad de sus datos, dirigiéndose por escrito a legal.leonautomotores@gmail.com con “Protección de Datos – Derecho ARCO” en el asunto.</p>
+<!-- ELIMINACIÓN DE DATOS -->
+<div class="accordion">
+<button><span>Solicitud de Eliminación de Datos</span><i class="fas fa-chevron-right"></i></button>
+<div class="accordion-content">
 
-<h3>7. Cesión de datos a terceros</h3>
-<p>No cederemos sus datos personales a terceros, salvo que sea necesario para los fines aquí especificados, cuando exista obligación legal o con su consentimiento previo.</p>
+<p>De conformidad con la Ley 25.326, puede solicitar la eliminación de sus datos personales.</p>
 
-<h3>8. Uso de cookies y tecnologías similares</h3>
-<p>Nuestro sitio puede utilizar cookies para mejorar su experiencia. Usted puede gestionar o deshabilitar las cookies desde su navegador.</p>
-<p>Asimismo, este sitio puede utilizar herramientas de terceros como Google Analytics y plataformas publicitarias de Meta (Facebook e Instagram), que pueden recopilar información de navegación de acuerdo con sus propias políticas de privacidad.</p>
+<p>Enviar correo a: <strong>legal.leonautomotores@gmail.com</strong></p>
 
-<h3>9. Modificaciones del aviso</h3>
-<p>Podremos actualizar este Aviso de Privacidad para adaptarlo a cambios legales, regulatorios o de nuestros servicios, publicando la nueva versión en este sitio web.</p>
-
-<hr>
-
-<h2>Solicitud de Eliminación de Datos</h2>
-<p><strong>Eliminación de datos del usuario – Leon Automotores</strong></p>
-
-<p>Esta solicitud aplica a los datos personales recopilados por Leon Automotores a través de este sitio web, formularios de contacto, campañas publicitarias, integraciones con Meta (Facebook / Instagram) y otros servicios digitales.</p>
-
-<p>De conformidad con la Ley N.º 25.326 de Protección de Datos Personales (Argentina), los usuarios pueden solicitar la eliminación de sus datos personales recopilados por Leon Automotores.</p>
-
-<p>Este derecho se ejerce conforme a los artículos 16 y concordantes de la Ley 25.326 de Protección de Datos Personales.</p>
-
-<p>Para solicitar la eliminación de datos, el usuario deberá enviar un correo electrónico a: <strong>legal.leonautomotores@gmail.com</strong></p>
-
-<p>El mensaje deberá incluir:</p>
 <ul>
-  <li>Nombre y apellido</li>
-  <li>Número de DNI</li>
-  <li>Copia del DNI (frente y dorso) para verificación de identidad</li>
-  <li>Número de teléfono de contacto</li>
-  <li>Solicitud expresa de eliminación de datos personales</li>
+<li>Nombre y apellido</li>
+<li>DNI</li>
+<li>Copia DNI frente y dorso</li>
+<li>Teléfono</li>
+<li>Solicitud expresa</li>
 </ul>
 
-<p>Una vez recibida la solicitud completa, Leon Automotores procesará el pedido y responderá dentro de los plazos establecidos por la normativa vigente.</p>
+</div>
+</div>
+
+<button class="close-btn" onclick="window.close()">Cerrar</button>
+
+</div>
+
+<script>
+document.querySelectorAll(".accordion button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const content = btn.nextElementSibling;
+    const open = btn.classList.contains("active");
+
+    document.querySelectorAll(".accordion-content").forEach(c => {
+      c.style.maxHeight = null;
+      c.style.paddingTop = "0";
+      c.style.paddingBottom = "0";
+      c.previousElementSibling.classList.remove("active");
+    });
+
+    if (!open) {
+      content.style.maxHeight = content.scrollHeight + "px";
+      content.style.paddingTop = "15px";
+      content.style.paddingBottom = "15px";
+      btn.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
