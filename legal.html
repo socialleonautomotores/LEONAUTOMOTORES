@@ -12,100 +12,99 @@
 html { scroll-behavior: smooth; }
 
 body {
-  margin: 0;
-  font-family: 'Alibaba Sans', sans-serif;
-  background-color: #000;
-  color: #fff;
-  line-height: 1.6;
+    margin: 0;
+    font-family: 'Alibaba Sans', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
 }
 
 .container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .logo {
-  display: block;
-  margin: 20px auto;
-  max-width: 200px;
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
 }
 
+/* ÚNICO CAMBIO: fondo negro uniforme */
 .accordion {
-  background: linear-gradient(145deg, #111, #1a1a1a);
-  border: 1px solid #333;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  overflow: hidden;
+    background-color: #000;
+    border: 1px solid #222;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .accordion button {
-  background: transparent;
-  color: #fff;
-  cursor: pointer;
-  padding: 20px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .accordion button:hover {
-  background-color: #222;
+    background-color: #111;
 }
 
 .accordion button i {
-  transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .accordion button.active i {
-  transform: rotate(90deg);
-  color: #D4AF37;
+    transform: rotate(90deg);
+    color: #D4AF37;
 }
 
-/* 🔧 FIX DEFINITIVO: sin max-height */
 .accordion-content {
-  display: none;
-  padding: 20px;
-  background-color: #111;
-}
-
-.accordion-content.open {
-  display: block;
+    padding: 0 20px;
+    background-color: #111;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.3s ease;
 }
 
 .accordion-content p,
 .accordion-content ul {
-  margin: 15px 0;
+    margin: 15px 0;
 }
 
 ul { margin-left: 20px; }
 
 .close-btn {
-  display: block;
-  margin: 40px auto 20px;
-  padding: 12px 40px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #D4AF37;
-  background: transparent;
-  border: 2px solid #D4AF37;
-  border-radius: 8px;
-  cursor: pointer;
+    display: block;
+    margin: 40px auto 20px;
+    padding: 12px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #D4AF37;
+    background: transparent;
+    border: 2px solid #D4AF37;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .close-btn:hover {
-  background: #D4AF37;
-  color: #000;
+    background: #D4AF37;
+    color: #000;
 }
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
 <img src="leon-logo.png" alt="Leon Automotores" class="logo">
@@ -114,6 +113,7 @@ ul { margin-left: 20px; }
 <div class="accordion">
 <button>Términos y Condiciones <i class="fas fa-chevron-right"></i></button>
 <div class="accordion-content">
+
 <p><strong>1. Aceptación</strong><br>
 El acceso y uso de este sitio web www.leonautomotores.com.ar (en adelante, el “Sitio”) se rige por estos Términos y Condiciones. El uso del Sitio implica la aceptación de ellos.</p>
 
@@ -140,6 +140,7 @@ Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquie
 
 <p><strong>9. Ley aplicable y jurisdicción</strong><br>
 Estos Términos se rigen por las leyes de la República Argentina. Cualquier controversia será sometida a la jurisdicción de los tribunales ordinarios con asiento en la ciudad de Río Cuarto, Departamento Río Cuarto, Córdoba, República Argentina.</p>
+
 </div>
 </div>
 
@@ -147,6 +148,7 @@ Estos Términos se rigen por las leyes de la República Argentina. Cualquier con
 <div class="accordion">
 <button>Aviso de Privacidad <i class="fas fa-chevron-right"></i></button>
 <div class="accordion-content">
+
 <p><strong>1. Identidad y datos de contacto</strong><br>
 En cumplimiento de la Ley 25.326 de Protección de Datos Personales (Ley de Habeas Data), nosotros, LEONMA AUTOMOTORES S.A.S., con domicilio en Calle Gaudard Carlos 1461, piso 1, departamento B, Río Cuarto, Córdoba, CP X5800, República Argentina, y CUIT 30-71849867-4, somos responsables del tratamiento de los datos personales que usted nos proporcione a través de este sitio web www.leonautomotores.com.ar.</p>
 
@@ -185,6 +187,7 @@ Nuestro sitio puede utilizar cookies para mejorar su experiencia.</p>
 
 <p><strong>9. Modificaciones del aviso</strong><br>
 Podremos actualizar este Aviso de Privacidad cuando sea necesario.</p>
+
 </div>
 </div>
 
@@ -192,6 +195,7 @@ Podremos actualizar este Aviso de Privacidad cuando sea necesario.</p>
 <div class="accordion">
 <button>Solicitud de Eliminación de Datos <i class="fas fa-chevron-right"></i></button>
 <div class="accordion-content">
+
 <p>De conformidad con la Ley N.º 25.326 de Protección de Datos Personales (Argentina), los usuarios pueden solicitar la eliminación de sus datos personales recopilados por Leon Automotores.</p>
 
 <p>Para solicitar la eliminación de datos, el usuario deberá enviar un correo electrónico a <strong>legal.leonautomotores@gmail.com</strong>.</p>
@@ -206,6 +210,7 @@ Podremos actualizar este Aviso de Privacidad cuando sea necesario.</p>
 </ul>
 
 <p>Una vez recibida la solicitud completa, Leon Automotores responderá dentro de los plazos establecidos por la normativa vigente.</p>
+
 </div>
 </div>
 
@@ -215,20 +220,24 @@ Podremos actualizar este Aviso de Privacidad cuando sea necesario.</p>
 
 <script>
 document.querySelectorAll(".accordion button").forEach(button => {
-  button.addEventListener("click", () => {
-    const content = button.nextElementSibling;
-    const isOpen = content.classList.contains("open");
+    button.addEventListener("click", () => {
+        const content = button.nextElementSibling;
+        const isOpen = button.classList.contains("active");
 
-    document.querySelectorAll(".accordion-content").forEach(c => {
-      c.classList.remove("open");
-      c.previousElementSibling.classList.remove("active");
+        document.querySelectorAll(".accordion-content").forEach(c => {
+            c.style.maxHeight = "0";
+            c.style.paddingTop = "0";
+            c.style.paddingBottom = "0";
+            c.previousElementSibling.classList.remove("active");
+        });
+
+        if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.paddingTop = "15px";
+            content.style.paddingBottom = "15px";
+            button.classList.add("active");
+        }
     });
-
-    if (!isOpen) {
-      content.classList.add("open");
-      button.classList.add("active");
-    }
-  });
 });
 </script>
 
