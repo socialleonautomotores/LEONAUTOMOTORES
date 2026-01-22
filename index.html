@@ -11,7 +11,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Alibaba Sans',Arial,sans-serif;scroll-behavior:smooth;}
+body,html{font-family:'Alibaba Sans',Arial,sans-serif;scroll-behavior:smooth;}
 
 /* HERO */
 .hero{
@@ -22,7 +22,7 @@ body{font-family:'Alibaba Sans',Arial,sans-serif;scroll-behavior:smooth;}
   justify-content:center;
   align-items:center;
 }
-.hero img{max-width:480px;margin-bottom:40px;}
+.hero img{max-width:500px;margin-bottom:40px;}
 .hero .buttons{display:flex;gap:20px;flex-wrap:wrap;}
 .hero .buttons a{
   border:2px solid #D4AF37;
@@ -44,12 +44,12 @@ section{padding:90px 20px;text-align:center;}
 
 /* QUIENES SOMOS */
 #quienes-somos{
-  background:#f9f9f9;
   display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:40px;
   flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  background:#f9f9f9;
 }
 #quienes-somos .texto{
   max-width:600px;
@@ -59,23 +59,16 @@ section{padding:90px 20px;text-align:center;}
   font-style:italic;
   line-height:1.6;
 }
-.firma{
-  margin-top:15px;
-  font-size:.95rem;
-  color:#555;
-}
-.foto-gerente{
-  width:120px;
-  height:120px;
+#quienes-somos .foto-gerente{
+  flex:0 0 70px;
   border-radius:50%;
   border:3px solid #D4AF37;
   object-fit:cover;
-  flex-shrink:0;
 }
 
 /* NOVEDADES */
 #novedades h2{margin-bottom:20px;}
-#novedades p{margin-bottom:50px;color:#555;}
+#novedades p{margin-bottom:60px;color:#555;}
 
 .carousel-container{
   position:relative;
@@ -100,34 +93,33 @@ section{padding:90px 20px;text-align:center;}
 .right-btn{right:0;}
 
 .instagram-grid{
-  width:90%;
   display:flex;
-  gap:30px;
+  gap:30px;              /* MÁS ESPACIO ENTRE POSTEOS */
+  width:90%;
   overflow:hidden;
   scroll-behavior:smooth;
 }
 
-/* POSTEOS */
 .insta-post{
-  flex:0 0 calc((100% - 90px) / 4);
+  flex:0 0 22%;          /* 4 EN DESKTOP */
   aspect-ratio:1/1;
   border-radius:10px;
-  overflow:hidden;
-  background:#000;
-  transition:.35s;
+  background:#f0f0f0;
+  transition:transform .35s, box-shadow .35s;
 }
-.insta-post iframe{
+.insta-post img{
   width:100%;
   height:100%;
-  border:none;
+  object-fit:cover;
 }
 .insta-post:hover{
-  transform:translateY(-6px) scale(1.04);
-  box-shadow:0 15px 25px rgba(0,0,0,.25);
+  transform:scale(1.05);
+  box-shadow:0 12px 22px rgba(0,0,0,.25);
 }
 
 /* CONTACTO */
 #contactenos h2{margin-bottom:30px;}
+
 .contact-social{
   display:flex;
   justify-content:center;
@@ -137,14 +129,14 @@ section{padding:90px 20px;text-align:center;}
 .contact-social a{
   width:55px;height:55px;
   border:2px solid #D4AF37;
+  color:#D4AF37;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#D4AF37;
   font-size:1.6rem;
-  transition:.3s;
   text-decoration:none;
+  transition:.3s;
 }
 .contact-social a:hover{
   background:#D4AF37;
@@ -157,11 +149,14 @@ section{padding:90px 20px;text-align:center;}
   flex-wrap:wrap;
   justify-content:center;
 }
-.mapa, .formulario{
+.mapa,.formulario{
   flex:1 1 400px;
   max-width:500px;
 }
-.mapa iframe{width:100%;height:100%;}
+.mapa iframe{
+  width:100%;
+  height:100%;
+}
 
 input,select,textarea{
   width:100%;
@@ -170,6 +165,7 @@ input,select,textarea{
   border-radius:8px;
   border:1px solid #ccc;
 }
+
 button{
   border:2px solid #D4AF37;
   background:transparent;
@@ -187,12 +183,12 @@ button:hover{
 /* FOOTER */
 footer{
   background:#1c1c1c;
-  color:#fff;
+  color:white;
   padding:25px;
-  text-align:center;
   font-size:.9rem;
+  text-align:center;
 }
-footer a{color:#fff;text-decoration:none;}
+footer a{color:white;text-decoration:none;}
 
 /* FLOATS */
 .whatsapp-float,.backtotop-float{
@@ -212,66 +208,12 @@ footer a{color:#fff;text-decoration:none;}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
-  .insta-post{flex:0 0 calc((100% - 60px) / 3);}
+  .insta-post{flex:0 0 30%;} /* 3 */
 }
 @media(max-width:768px){
-  .insta-post{flex:0 0 calc((100% - 30px) / 2);}
+  .insta-post{flex:0 0 45%;} /* 2 */
 }
 </style>
 </head>
 
 <body id="top">
-
-<section class="hero">
-  <img src="leon-logo.png">
-  <div class="buttons">
-    <a href="#quienes-somos">QUIENES SOMOS</a>
-    <a href="#novedades">NOVEDADES</a>
-    <a href="#contactenos">CONTACTANOS</a>
-  </div>
-</section>
-
-<section id="quienes-somos">
-  <div class="texto">
-    <h2>QUIENES SOMOS</h2>
-    <p>
-      En Leon Automotores, creemos que comprar un auto debe ser simple, seguro y transparente.
-      Por eso ofrecemos autos verificados, asesoramiento según tus necesidades y acompañamiento
-      en todo el proceso. Cumplimos con lo que prometemos. Somos de palabra.
-    </p>
-    <p class="firma">Leonardo Mañez, Gerente en León Automotores.</p>
-  </div>
-  <img src="gerente.jpg" class="foto-gerente">
-</section>
-
-<section id="novedades">
-  <h2>Novedades</h2>
-  <p>Mirá nuestras últimas publicaciones en Instagram.</p>
-
-  <div class="carousel-container">
-    <button class="carousel-btn left-btn">&#10094;</button>
-    <div class="instagram-grid">
-      <!-- ACA VAN TUS IFRAME DE INSTAGRAM -->
-    </div>
-    <button class="carousel-btn right-btn">&#10095;</button>
-  </div>
-</section>
-
-<section id="contactenos">
-  <h2>Contactanos</h2>
-  <div class="contact-social">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-whatsapp"></i></a>
-  </div>
-</section>
-
-<footer>
-  © León Automotores · Todos los derechos reservados
-</footer>
-
-<a href="https://wa.me/5493584828385" class="whatsapp-float">💬</a>
-<a href="#top" class="backtotop-float">⬆</a>
-
-</body>
-</html>
