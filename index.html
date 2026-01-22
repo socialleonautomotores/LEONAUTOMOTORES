@@ -10,26 +10,26 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body, html { font-family:'Alibaba Sans', Arial, sans-serif; scroll-behavior:smooth; }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Alibaba Sans',Arial,sans-serif;scroll-behavior:smooth;}
 
 /* HERO */
 .hero{
   height:100vh;
+  background:linear-gradient(135deg,#1c1c1c,#333);
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,#1c1c1c,#333);
 }
-.hero img{ max-width:480px; margin-bottom:40px; }
-.hero .buttons{ display:flex; gap:20px; flex-wrap:wrap; }
+.hero img{max-width:480px;margin-bottom:40px;}
+.hero .buttons{display:flex;gap:20px;flex-wrap:wrap;}
 .hero .buttons a{
   border:2px solid #D4AF37;
   color:#D4AF37;
   padding:12px 25px;
-  text-decoration:none;
   border-radius:8px;
+  text-decoration:none;
   font-weight:700;
   transition:.3s;
 }
@@ -39,37 +39,43 @@ body, html { font-family:'Alibaba Sans', Arial, sans-serif; scroll-behavior:smoo
   transform:translateY(-2px);
 }
 
-/* Ocultar flota */
-#flota,
-.hero .buttons a[href="#flota"]{ display:none!important; }
-
 /* SECCIONES */
-section{ padding:80px 20px; text-align:center; }
+section{padding:90px 20px;text-align:center;}
 
 /* QUIENES SOMOS */
 #quienes-somos{
+  background:#f9f9f9;
   display:flex;
-  gap:30px;
   justify-content:center;
   align-items:center;
+  gap:40px;
   flex-wrap:wrap;
-  background:#f9f9f9;
 }
-#quienes-somos .texto{ max-width:600px; text-align:justify; }
-#quienes-somos p{ font-style:italic; line-height:1.5; }
-.firma{ margin-top:15px; font-size:.95rem; color:#555; }
+#quienes-somos .texto{
+  max-width:600px;
+  text-align:justify;
+}
+#quienes-somos p{
+  font-style:italic;
+  line-height:1.6;
+}
+.firma{
+  margin-top:15px;
+  font-size:.95rem;
+  color:#555;
+}
 .foto-gerente{
-  width:70px; height:70px;
+  width:120px;
+  height:120px;
   border-radius:50%;
   border:3px solid #D4AF37;
   object-fit:cover;
+  flex-shrink:0;
 }
 
-/* ============================= */
-/* NOVEDADES / INSTAGRAM */
-/* ============================= */
-#novedades h2{ margin-bottom:20px; }
-#novedades p{ margin-bottom:50px; color:#555; }
+/* NOVEDADES */
+#novedades h2{margin-bottom:20px;}
+#novedades p{margin-bottom:50px;color:#555;}
 
 .carousel-container{
   position:relative;
@@ -77,7 +83,6 @@ section{ padding:80px 20px; text-align:center; }
   align-items:center;
   justify-content:center;
 }
-
 .carousel-btn{
   position:absolute;
   top:50%;
@@ -86,13 +91,13 @@ section{ padding:80px 20px; text-align:center; }
   color:#fff;
   border:none;
   font-size:2rem;
-  border-radius:50%;
   padding:5px 12px;
+  border-radius:50%;
   cursor:pointer;
   z-index:10;
 }
-.left-btn{ left:0; }
-.right-btn{ right:0; }
+.left-btn{left:0;}
+.right-btn{right:0;}
 
 .instagram-grid{
   width:90%;
@@ -104,18 +109,17 @@ section{ padding:80px 20px; text-align:center; }
 
 /* POSTEOS */
 .insta-post{
-  flex:0 0 calc((100% - 90px) / 4); /* 4 desktop */
+  flex:0 0 calc((100% - 90px) / 4);
   aspect-ratio:1/1;
   border-radius:10px;
   overflow:hidden;
-  background:#eee;
-  cursor:pointer;
-  transition:transform .35s ease, box-shadow .35s ease;
+  background:#000;
+  transition:.35s;
 }
-.insta-post img{
+.insta-post iframe{
   width:100%;
   height:100%;
-  object-fit:cover;
+  border:none;
 }
 .insta-post:hover{
   transform:translateY(-6px) scale(1.04);
@@ -123,7 +127,7 @@ section{ padding:80px 20px; text-align:center; }
 }
 
 /* CONTACTO */
-#contactenos h2{ margin-bottom:30px; }
+#contactenos h2{margin-bottom:30px;}
 .contact-social{
   display:flex;
   justify-content:center;
@@ -140,6 +144,7 @@ section{ padding:80px 20px; text-align:center; }
   color:#D4AF37;
   font-size:1.6rem;
   transition:.3s;
+  text-decoration:none;
 }
 .contact-social a:hover{
   background:#D4AF37;
@@ -156,16 +161,15 @@ section{ padding:80px 20px; text-align:center; }
   flex:1 1 400px;
   max-width:500px;
 }
-.mapa iframe{ width:100%; height:100%; }
+.mapa iframe{width:100%;height:100%;}
 
-input, select, textarea{
+input,select,textarea{
   width:100%;
   padding:10px;
   margin-bottom:15px;
   border-radius:8px;
   border:1px solid #ccc;
 }
-
 button{
   border:2px solid #D4AF37;
   background:transparent;
@@ -174,26 +178,24 @@ button{
   border-radius:8px;
   font-weight:700;
   cursor:pointer;
-  transition:.3s;
 }
 button:hover{
   background:#D4AF37;
   color:#1c1c1c;
-  transform:translateY(-2px);
 }
 
 /* FOOTER */
 footer{
   background:#1c1c1c;
   color:#fff;
-  padding:20px;
+  padding:25px;
   text-align:center;
   font-size:.9rem;
 }
-footer a{ color:#fff; }
+footer a{color:#fff;text-decoration:none;}
 
 /* FLOATS */
-.whatsapp-float, .backtotop-float{
+.whatsapp-float,.backtotop-float{
   position:fixed;
   bottom:20px;
   width:60px;height:60px;
@@ -203,20 +205,17 @@ footer a{ color:#fff; }
   justify-content:center;
   font-size:28px;
   color:#fff;
+  text-decoration:none;
 }
-.whatsapp-float{ right:20px; background:#25d366; }
-.backtotop-float{ right:90px; background:#333; }
+.whatsapp-float{right:20px;background:#25d366;}
+.backtotop-float{right:90px;background:#333;}
 
-/* ============================= */
 /* RESPONSIVE */
-/* ============================= */
 @media(max-width:1024px){
-  .insta-post{ flex:0 0 calc((100% - 60px) / 3); } /* 3 tablet */
+  .insta-post{flex:0 0 calc((100% - 60px) / 3);}
 }
-
 @media(max-width:768px){
-  #quienes-somos{ gap:2px; }
-  .insta-post{ flex:0 0 calc((100% - 30px) / 2); } /* 2 mobile */
+  .insta-post{flex:0 0 calc((100% - 30px) / 2);}
 }
 </style>
 </head>
@@ -228,7 +227,6 @@ footer a{ color:#fff; }
   <div class="buttons">
     <a href="#quienes-somos">QUIENES SOMOS</a>
     <a href="#novedades">NOVEDADES</a>
-    <a href="#flota">NUESTRA FLOTA</a>
     <a href="#contactenos">CONTACTANOS</a>
   </div>
 </section>
@@ -236,7 +234,11 @@ footer a{ color:#fff; }
 <section id="quienes-somos">
   <div class="texto">
     <h2>QUIENES SOMOS</h2>
-    <p>En Leon Automotores, creemos que comprar un auto debe ser simple, seguro y transparente...</p>
+    <p>
+      En Leon Automotores, creemos que comprar un auto debe ser simple, seguro y transparente.
+      Por eso ofrecemos autos verificados, asesoramiento según tus necesidades y acompañamiento
+      en todo el proceso. Cumplimos con lo que prometemos. Somos de palabra.
+    </p>
     <p class="firma">Leonardo Mañez, Gerente en León Automotores.</p>
   </div>
   <img src="gerente.jpg" class="foto-gerente">
@@ -249,35 +251,27 @@ footer a{ color:#fff; }
   <div class="carousel-container">
     <button class="carousel-btn left-btn">&#10094;</button>
     <div class="instagram-grid">
-      <div class="insta-post"><img src="post1.jpg"></div>
-      <div class="insta-post"><img src="post2.jpg"></div>
-      <div class="insta-post"><img src="post3.jpg"></div>
-      <div class="insta-post"><img src="post4.jpg"></div>
-      <div class="insta-post"><img src="post5.jpg"></div>
-      <div class="insta-post"><img src="post6.jpg"></div>
-      <div class="insta-post"><img src="post7.jpg"></div>
-      <div class="insta-post"><img src="post8.jpg"></div>
-      <div class="insta-post"><img src="post9.jpg"></div>
-      <div class="insta-post"><img src="post10.jpg"></div>
+      <!-- ACA VAN TUS IFRAME DE INSTAGRAM -->
     </div>
     <button class="carousel-btn right-btn">&#10095;</button>
   </div>
 </section>
 
+<section id="contactenos">
+  <h2>Contactanos</h2>
+  <div class="contact-social">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</section>
+
+<footer>
+  © León Automotores · Todos los derechos reservados
+</footer>
+
 <a href="https://wa.me/5493584828385" class="whatsapp-float">💬</a>
 <a href="#top" class="backtotop-float">⬆</a>
-
-<script>
-const carousel=document.querySelector('.instagram-grid');
-const posts=[...carousel.children];
-posts.forEach(p=>carousel.appendChild(p.cloneNode(true)));
-let index=0;
-const gap=30;
-const move=()=>carousel.scrollTo({left:index*(posts[0].offsetWidth+gap),behavior:'smooth'});
-setInterval(()=>{ index=(index+1)%posts.length; move(); },3000);
-document.querySelector('.left-btn').onclick=()=>{ index=(index-1+posts.length)%posts.length; move(); };
-document.querySelector('.right-btn').onclick=()=>{ index=(index+1)%posts.length; move(); };
-</script>
 
 </body>
 </html>
