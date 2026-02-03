@@ -15,7 +15,7 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
           crossorigin="anonymous"
-          referrerpolicy="no-referrer" />
+          referrerpolicy="no-referrer">
 
     <style>
         * {
@@ -26,15 +26,8 @@
 
         body,
         html,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        a,
-        div {
+        h1, h2, h3, h4, h5, h6,
+        p, a, div {
             font-family: 'Alibaba Sans', Arial, sans-serif;
             color: #1c1c1c;
         }
@@ -89,7 +82,7 @@
             transform: translateY(-2px);
         }
 
-        /* Ocultar temporalmente Flota */
+        /* Ocultar Flota */
         #flota,
         .hero .buttons a[href="#flota"] {
             display: none !important;
@@ -137,7 +130,7 @@
             flex: 0 0 70px;
             border-radius: 50%;
             border: 3px solid #D4AF37;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             object-fit: cover;
         }
 
@@ -146,26 +139,13 @@
             background-color: #fff;
         }
 
-        #novedades h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        #novedades p {
-            margin-bottom: 40px;
-            color: #555;
-        }
-
         /* Contacto */
         #contactenos {
             background-color: #fff;
             min-height: 400px;
         }
 
-        #contactenos h2 {
-            margin-bottom: 30px;
-        }
-
+        /* Redes */
         .contact-social {
             display: flex;
             justify-content: center;
@@ -183,8 +163,8 @@
             align-items: center;
             justify-content: center;
             font-size: 1.6rem;
-            transition: all 0.3s;
             text-decoration: none;
+            transition: all 0.3s;
         }
 
         .contact-social a:hover {
@@ -193,108 +173,40 @@
             transform: translateY(-2px);
         }
 
-        #contactenos .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        #contactenos .formulario,
-        #contactenos .mapa {
-            flex: 1 1 400px;
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #contactenos .mapa iframe {
-            flex: 1;
-            width: 100%;
-        }
-
-        #contactenos input,
-        #contactenos select,
-        #contactenos textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-
-        #contactenos button {
-            padding: 12px 25px;
-            border: 2px solid #D4AF37;
-            color: #D4AF37;
-            background-color: transparent;
-            font-weight: 700;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        #contactenos button:hover {
-            background-color: #D4AF37;
-            color: #1c1c1c;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            background-color: #1c1c1c;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer a {
-            color: white;
-        }
-
-        /* Botones flotantes */
-        .whatsapp-float,
-        .backtotop-float {
-            position: fixed;
-            bottom: 20px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            color: #fff;
-            z-index: 1000;
-        }
-
-        .whatsapp-float {
-            background-color: #25d366;
-            right: 20px;
-        }
-
-        .backtotop-float {
-            background-color: #333;
-            right: 90px;
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
+            #quienes-somos {
+                flex-direction: column;
+                gap: 2px;
+            }
+
             .hero img {
                 max-width: 360px;
+                margin-bottom: 20px;
             }
 
-            .tagembed-wrapper iframe {
-                height: 500px;
+            .hero .buttons {
+                gap: 10px;
+            }
+
+            .hero .buttons a {
+                padding: 10px 18px;
+                font-size: 0.9rem;
             }
         }
 
+        /* Tagembed */
         .tagembed-wrapper iframe {
             max-width: 100%;
+            height: 420px;
+            border: none;
             overflow: hidden;
         }
     </style>
 </head>
 
 <body id="top">
+
     <!-- Hero -->
     <section class="hero">
         <img src="leon-logo.png" alt="Leon Automotores">
@@ -310,41 +222,41 @@
     <section id="quienes-somos">
         <div class="texto">
             <h2>QUIENES SOMOS</h2>
-            <p>En Leon Automotores...</p>
+            <p>En Leon Automotores, creemos que comprar un auto debe ser simple, seguro y transparente...</p>
             <p class="firma">Leonardo Mañez, Gerente en León Automotores.</p>
         </div>
-        <img src="gerente.jpg" class="foto-gerente" alt="Gerente">
+        <img src="gerente.jpg" alt="Gerente" class="foto-gerente">
     </section>
 
     <!-- Novedades -->
     <section id="novedades">
         <h2>NOVEDADES</h2>
         <p>Mirá nuestras últimas publicaciones en Instagram.</p>
-
         <div class="tagembed-wrapper">
-            <iframe src="https://widget.tagembed.com/314807?website=1"
-                    allow="fullscreen"
-                    loading="lazy"
-                    referrerpolicy="no-referrer"
-                    style="width:100%; height:420px; border:none;">
+            <iframe
+                src="https://widget.tagembed.com/314807?website=1"
+                allow="fullscreen"
+                loading="lazy"
+                referrerpolicy="no-referrer">
             </iframe>
         </div>
     </section>
 
+    <!-- Contacto -->
+    <section id="contactenos">
+        <h2>CONTACTANOS</h2>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <p>© 2026 LEÓN AUTOMOTORES</p>
+        <p>Copyright © 2026 LEÓN AUTOMOTORES</p>
     </footer>
-
-    <a href="#top" class="backtotop-float">⬆</a>
-    <a href="https://wa.me/5493584828385" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
     <script>
         window.addEventListener('load', () => {
             window.scrollTo(0, 0);
         });
     </script>
+
 </body>
 </html>
